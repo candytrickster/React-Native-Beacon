@@ -6,19 +6,7 @@ import {
   Button
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-
-class ChatScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Chat with Lucy',
-  };
-  render() {
-    return (
-      <View>
-        <Text>Chat with Lucy</Text>
-      </View>
-    );
-  }
-}
+import ChatScreen from './screens/ProfileScreen';
 
 
 class HomeScreen extends React.Component {

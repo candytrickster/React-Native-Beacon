@@ -1,34 +1,25 @@
-import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
-import { Tile, List, ListItem, Text } from 'react-native-elements';
+import React from 'react';
+import {
+  AppRegistry,
+  Text,
+  View,
+  Button
+} from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
-class UserDetail extends Component {
+
+
+class ChatScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Chat with Lucy. or not.',
+  };
   render() {
-    const { picture, name, email, phone, login, dob, location } = this.props.navigation.state.params;
-
     return (
-      <ScrollView>
-        <List>
-          <ListItem
-            title="1"
-          />
-          <ListItem
-            title="2"
-          />
-          <ListItem
-            title="3"
-          />
-        </List>
-        <List>
-          <ListItem
-            title="444444"
-          />
-        </List>
-
-        
-      </ScrollView>
+      <View>
+        <Text>Chat with Lucy. or not i guess.</Text>
+      </View>
     );
   }
 }
 
-export default UserDetail;
+export default ChatScreen;
