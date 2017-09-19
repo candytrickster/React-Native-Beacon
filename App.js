@@ -3,6 +3,7 @@ import { AppRegistry, Text, View, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import GridScreen from './screens/GridScreen';
 import SingleItemScreen from './screens/SingleItemScreen';
+import EndScreen from './screens/EndScreen';
 
 
 class HomeScreen extends React.Component {
@@ -27,5 +28,8 @@ export default SimpleApp = StackNavigator({
   Home: { screen: HomeScreen },
   Grid: { screen: GridScreen },
   SingleItem: { screen: SingleItemScreen },
+  End: { screen: EndScreen }
+},{ 
+  headerMode: 'none' 
 });
 
