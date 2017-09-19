@@ -1,12 +1,8 @@
 import React from 'react';
-import {
-  AppRegistry,
-  Text,
-  View,
-  Button
-} from 'react-native';
+import { AppRegistry, Text, View, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import ChatScreen from './screens/ProfileScreen';
+import GridScreen from './screens/GridScreen';
+import SingleItemScreen from './screens/SingleItemScreen';
 
 
 class HomeScreen extends React.Component {
@@ -19,7 +15,7 @@ class HomeScreen extends React.Component {
       <View>
         <Text>Hello, Chat App!</Text>
         <Button
-          onPress={() => navigate('Chat')}
+          onPress={() => navigate('Grid')}
           title="Chat with Lucy"
         />
       </View>
@@ -29,6 +25,7 @@ class HomeScreen extends React.Component {
 
 export default SimpleApp = StackNavigator({
   Home: { screen: HomeScreen },
-  Chat: { screen: ChatScreen },
+  Grid: { screen: GridScreen },
+  SingleItem: { screen: SingleItemScreen },
 });
 
