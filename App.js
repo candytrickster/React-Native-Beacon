@@ -1,5 +1,6 @@
 import React from 'react';
-import { AppRegistry, Text, View, Button } from 'react-native';
+import { AppRegistry, Text, View } from 'react-native';
+import { Button } from 'react-native-elements';
 import { StackNavigator } from 'react-navigation';
 import Hr from 'react-native-hr';
 import GridScreen from './screens/GridScreen';
@@ -21,8 +22,12 @@ class HomeScreen extends React.Component {
         <Hr lineStyle={{ height: 2 }} />
         <Text>SCAVENGER HUNT</Text>
         <Button
+          raised
+          iconRight={{name: 'play-arrow', size: 32}}
+          buttonStyle={{backgroundColor: 'red', borderRadius: 20}}
+          textStyle={{textAlign: 'center', fontSize:24}}
+          title={`Play`}
           onPress={() => navigate('Grid')}
-          title="Chat with Lucy"
         />
       </View>
     );
