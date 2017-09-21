@@ -21,7 +21,7 @@ class HomeScreen extends React.Component {
 
   async componentWillMount() {
     await Expo.Font.loadAsync({
-      playfair: require("./assets/fonts/PlayfairDisplaySC-Regular.ttf")
+      titlewave: require("./assets/fonts/Title-Wave-Regular.ttf")
     });
 
     this.setState({ isReady: true });
@@ -44,7 +44,7 @@ class HomeScreen extends React.Component {
             raised
             iconRight={{name: 'play-arrow', size: 32}}
             buttonStyle={{backgroundColor: 'red', borderRadius: 20}}
-            textStyle={{textAlign: 'center',fontFamily: 'playfair'}}
+            textStyle={{textAlign: 'center',fontFamily: 'titlewave'}}
             fontSize={24}
             title={`Play`}
             onPress={() => navigate('Grid')}
