@@ -1,9 +1,11 @@
 import React from 'react';
 import { AppRegistry, Text, View, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import Hr from 'react-native-hr';
 import GridScreen from './screens/GridScreen';
 import SingleItemScreen from './screens/SingleItemScreen';
 import EndScreen from './screens/EndScreen';
+import StatusBar from './components/StatusBar';
 
 
 class HomeScreen extends React.Component {
@@ -14,7 +16,10 @@ class HomeScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View>
-        <Text>Hello, Chat App!</Text>
+        <StatusBar/>
+        <Text>UTAH CAPITOL</Text>
+        <Hr lineStyle={{ height: 2 }} />
+        <Text>SCAVENGER HUNT</Text>
         <Button
           onPress={() => navigate('Grid')}
           title="Chat with Lucy"

@@ -8,6 +8,7 @@ import {
   MenuOption,
   MenuTrigger,
 } from 'react-native-popup-menu';
+import StatusBar from '../components/StatusBar';
 
 class ChatScreen extends React.Component {
 
@@ -20,10 +21,11 @@ class ChatScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View>
-        <MenuContext style={{flexDirection: 'column', paddingTop: 50, width: 300}}>
+        <StatusBar/>
+        <MenuContext style={{flexDirection: 'column', paddingTop: 50, width: 300,}}>
           <Menu>
             <MenuTrigger text='End Game'/>
-            <MenuOptions>
+            <MenuOptions style={{ marginTop: 50 }}>
               <MenuOption onSelect={() => alert(`Not called`)} disabled={true}>
                 <Text style={{color: '#f00'}}>Are you sure you want to end the game?</Text>
               </MenuOption>
