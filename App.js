@@ -7,30 +7,57 @@ import GridScreen from './screens/GridScreen';
 import SingleItemScreen from './screens/SingleItemScreen';
 import EndScreen from './screens/EndScreen';
 import StatusBar from './components/StatusBar';
+import Expo from 'expo';
 
 
 class HomeScreen extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      isReady: false
+    };
+  }
+
+  async componentWillMount() {
+    await Expo.Font.loadAsync({
+      playfair: require("./assets/fonts/PlayfairDisplaySC-Regular.ttf")
+    });
+
+    this.setState({ isReady: true });
+  }
+
   static navigationOptions = {
     title: 'Welcome',
   };
+
   render() {
-    const { navigate } = this.props.navigation;
-    return (
-      <View>
-        <StatusBar/>
-        <Text>UTAH CAPITOL</Text>
-        <Hr lineStyle={{ height: 2 }} />
-        <Text>SCAVENGER HUNT</Text>
-        <Button
-          raised
-          iconRight={{name: 'play-arrow', size: 32}}
-          buttonStyle={{backgroundColor: 'red', borderRadius: 20}}
-          textStyle={{textAlign: 'center', fontSize:24}}
-          title={`Play`}
-          onPress={() => navigate('Grid')}
-        />
-      </View>
-    );
+    if(this.state.isReady) {
+      const { navigate } = this.props.navigation;
+      return (
+        <View>
+          <StatusBar/>
+          <Text>UTAH CAPITOL</Text>
+          <Hr lineStyle={{ height: 2 }} />
+          <Text>SCAVENGER HUNT</Text>
+          <Button
+            raised
+            iconRight={{name: 'play-arrow', size: 32}}
+            buttonStyle={{backgroundColor: 'red', borderRadius: 20}}
+            textStyle={{textAlign: 'center',fontFamily: 'playfair'}}
+            fontSize={24}
+            title={`Play`}
+            onPress={() => navigate('Grid')}
+          />
+        </View>
+      );
+    } else {
+      return (
+        <View>
+          <Text>Loading</Text>
+        </View>
+      );
+    }
   }
 }
 
