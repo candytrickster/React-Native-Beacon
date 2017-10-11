@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Platform} from 'react-native';
+import {View, Text, StyleSheet, Animated, Image} from 'react-native';
 
 class Shape extends Component{
   render(){
     return(
       <View>
-        
+
       </View>
     );
   }
