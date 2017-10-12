@@ -27,7 +27,9 @@ class HomeScreen extends React.Component {
 
   async componentWillMount() {
     await Expo.Font.loadAsync({
-      titlewave: require("./assets/fonts/Title-Wave-Regular.ttf")
+      titlewave: require("./assets/fonts/Title-Wave-Regular.ttf"),
+      playfair: require("./assets/fonts/Playfair.ttf"),
+      avenir: require("./assets/fonts/Avenir.otf")
     });
 
     this.setState({ isReady: true });
@@ -56,7 +58,18 @@ class HomeScreen extends React.Component {
       return (
         <Image source={require('./assets/images/index/bg.png')} style={styles.container}>
           <View>
-            
+            <Text style={styles.capitolText}>UTAH CAPITOL</Text>
+            <Hr lineStyle={{ backgroundColor: "white", height: 2 }}/>
+            <Text style={styles.scavengerText}>SCAVENGER HUNT</Text>
+            <Button
+              raised
+              iconRight={{name: 'play-arrow', size: 32}}
+              buttonStyle={styles.playButton}
+              textStyle={styles.buttonText}
+              fontSize={24}
+              title={`PLAY`}
+              onPress={() => navigate('Grid')}
+            />
             <Grass value={height(100)-370} delay={0}/>
             <Capitol value={height(0)-180} delay={1000}/>
 
@@ -82,7 +95,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  playButton: {
+    backgroundColor: 'red',
+    borderRadius: 20,
+    width:150
+  },
+  buttonText: {
+    textAlign: 'center',
+    fontFamily: 'titlewave'
+  },
+  capitolText: {
+    fontFamily: 'playfair',
+    color: 'white',
+    fontSize:32
+  },
+  scavengerText: {
+    fontFamily: 'avenir',
+    color: 'white',
+    fontSize:32
+  }
+
 });
+
 
 export default SimpleApp = StackNavigator({
   Home: { screen: HomeScreen },
