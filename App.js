@@ -60,23 +60,23 @@ class HomeScreen extends React.Component {
 
       return (
         <Image source={require('./assets/images/index/bg.png')} style={styles.container}>
-          <View style={{justifyContent: 'center', alignItems: 'center'}}>
-            <FadeIn delay={2300} duration={1500}>
+          <View style={{justifyContent: 'center', alignItems: 'center', position: 'absolute'}}>
+            <FadeIn delay={2300} duration={1500} style={{justifyContent: 'center', alignItems: 'center', zIndex: 9999}}>
               <Text style={styles.capitolText}>UTAH CAPITOL</Text>
-              <Hr lineStyle={{ backgroundColor: "white", height: 2 }}/>
+              <Hr lineStyle={{ backgroundColor: "white", height: 2, top:height(6) }}/>
               <Text style={styles.scavengerText}>SCAVENGER HUNT</Text>
               <Button
                 raised
-                iconRight={{name: 'play-arrow', size: 32}}
+                iconRight={{name: 'play-arrow', size: 32, color:'#000'}}
                 buttonStyle={styles.playButton}
                 textStyle={styles.buttonText}
-                fontSize={24}
+                fontSize={32}
                 title={`PLAY`}
                 onPress={() => navigate('Grid')}
               />
             </FadeIn>
-            <Grass value={height(100)-370} delay={0}/>
-            <Capitol value={height(0)-180} delay={1000}/>
+            <Grass value={height(100)-450} delay={0}/>
+            <Capitol value={height(0)-260} delay={1000}/>
 
           </View>
         </Image>
@@ -91,6 +91,7 @@ class HomeScreen extends React.Component {
   }
 }
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -101,23 +102,30 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   playButton: {
-    backgroundColor: 'red',
+    backgroundColor: '#ffdf00',
     borderRadius: 20,
-    width:150
+    width:270,
+    top: height(65)
   },
   buttonText: {
     textAlign: 'center',
-    fontFamily: 'titlewave'
+    fontFamily: 'titlewave',
+    color:"#000"
   },
   capitolText: {
     fontFamily: 'playfair',
     color: 'white',
-    fontSize:36
+    fontSize:36,
+    top: height(5)
   },
   scavengerText: {
     fontFamily: 'avenir',
     color: 'white',
-    fontSize:38
+    fontSize:38,
+    top: height(8)
+  },
+  hr: {
+    top: height(6)
   }
 
 });
