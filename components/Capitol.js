@@ -36,7 +36,7 @@ class Grass extends Component{
     };
 
     return (
-        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+        <View>
           <Animated.Image
             style={barStyles}
               source={require('../assets/images/index/capitol.png')}
@@ -45,10 +45,5 @@ class Grass extends Component{
     );
   }
 }
-
-const styles = StyleSheet.create({
-  
-
-})
 
 export default Grass; 

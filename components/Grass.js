@@ -43,9 +43,4 @@ class Grass extends Component{
   }
 }
 
-const styles = StyleSheet.create({
-  
-
-})
-
 export default Grass;

@@ -4,13 +4,16 @@ import { Button } from 'react-native-elements';
 import { StackNavigator } from 'react-navigation';
 import Hr from 'react-native-hr';
 import { width, height, totalSize } from 'react-native-dimension';
-
+//screens
 import GridScreen from './screens/GridScreen';
 import SingleItemScreen from './screens/SingleItemScreen';
 import EndScreen from './screens/EndScreen';
+//components
 import StatusBar from './components/StatusBar';
 import Grass from './components/Grass';
 import Capitol from './components/Capitol';
+import FadeIn from './components/FadeIn';
+
 import Expo from 'expo';
 
 const resizeMode = 'center';
@@ -57,19 +60,21 @@ class HomeScreen extends React.Component {
 
       return (
         <Image source={require('./assets/images/index/bg.png')} style={styles.container}>
-          <View>
-            <Text style={styles.capitolText}>UTAH CAPITOL</Text>
-            <Hr lineStyle={{ backgroundColor: "white", height: 2 }}/>
-            <Text style={styles.scavengerText}>SCAVENGER HUNT</Text>
-            <Button
-              raised
-              iconRight={{name: 'play-arrow', size: 32}}
-              buttonStyle={styles.playButton}
-              textStyle={styles.buttonText}
-              fontSize={24}
-              title={`PLAY`}
-              onPress={() => navigate('Grid')}
-            />
+          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <FadeIn delay={2300} duration={1500}>
+              <Text style={styles.capitolText}>UTAH CAPITOL</Text>
+              <Hr lineStyle={{ backgroundColor: "white", height: 2 }}/>
+              <Text style={styles.scavengerText}>SCAVENGER HUNT</Text>
+              <Button
+                raised
+                iconRight={{name: 'play-arrow', size: 32}}
+                buttonStyle={styles.playButton}
+                textStyle={styles.buttonText}
+                fontSize={24}
+                title={`PLAY`}
+                onPress={() => navigate('Grid')}
+              />
+            </FadeIn>
             <Grass value={height(100)-370} delay={0}/>
             <Capitol value={height(0)-180} delay={1000}/>
 
@@ -107,12 +112,12 @@ const styles = StyleSheet.create({
   capitolText: {
     fontFamily: 'playfair',
     color: 'white',
-    fontSize:32
+    fontSize:36
   },
   scavengerText: {
     fontFamily: 'avenir',
     color: 'white',
-    fontSize:32
+    fontSize:38
   }
 
 });
