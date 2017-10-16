@@ -9,7 +9,6 @@ import GridScreen from './screens/GridScreen';
 import SingleItemScreen from './screens/SingleItemScreen';
 import EndScreen from './screens/EndScreen';
 //components
-import StatusBar from './components/StatusBar';
 import Grass from './components/Grass';
 import Capitol from './components/Capitol';
 import FadeIn from './components/FadeIn';
@@ -63,7 +62,7 @@ class HomeScreen extends React.Component {
           <View style={{justifyContent: 'center', alignItems: 'center', position: 'absolute'}}>
             <FadeIn delay={2300} duration={1500} style={{justifyContent: 'center', alignItems: 'center', zIndex: 9999}}>
               <Text style={styles.capitolText}>UTAH CAPITOL</Text>
-              <Hr lineStyle={{ backgroundColor: "white", height: 2, top:height(6) }}/>
+              <Hr lineStyle={{ backgroundColor: "white", height: 2, top:height(5) }}/>
               <Text style={styles.scavengerText}>SCAVENGER HUNT</Text>
               <Button
                 raised
@@ -116,16 +115,13 @@ const styles = StyleSheet.create({
     fontFamily: 'playfair',
     color: 'white',
     fontSize:36,
-    top: height(5)
+    top: height(4)
   },
   scavengerText: {
     fontFamily: 'avenir',
     color: 'white',
     fontSize:38,
-    top: height(8)
-  },
-  hr: {
-    top: height(6)
+    top: height(7)
   }
 
 });
