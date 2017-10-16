@@ -2,10 +2,10 @@
 //this way we can change the state without needing to overwrite the json file.
 
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Animated, Image, Easing} from 'react-native';
+import { View, Text, StyleSheet, Animated, Image, Easing } from 'react-native';
 import { width, height, totalSize } from 'react-native-dimension';
 
-class FadeIn extends Component{
+class Beacon extends Component{
   
   constructor(props) {
     super(props);
@@ -15,11 +15,14 @@ class FadeIn extends Component{
     	clue:"",
     	hint:"",
     	found:"false",
+    	address: ""
     };
   }
 
   componentDidMount() {
-    
+    // this.setState({
+    // 	name: this.props.name
+    // });
   }
 
   render() {
@@ -33,4 +36,4 @@ class FadeIn extends Component{
   }
 }
 
-export default FadeIn;
+export default Beacon;

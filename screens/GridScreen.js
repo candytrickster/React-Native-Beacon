@@ -1,22 +1,33 @@
 import React from 'react';
-import { AppRegistry, Text, View, Button, Easing, TouchableOpacity, Animated, Image, StyleSheet } from 'react-native';
+import { Text, View, Button, Easing, TouchableOpacity, Animated, Image, StyleSheet, ScrollView } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { MenuContext } from 'react-native-popup-menu';
-import {
-  Menu,
-  MenuOptions,
-  MenuOption,
-  MenuTrigger,
-} from 'react-native-popup-menu';
-import FlipView from 'react-native-flip-view';
+import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu';
+import FlipView from 'react-native-flip-view'; 
 
 import StatusBar from '../components/StatusBar';
 
-class ChatScreen extends React.Component {
+class GridScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { isFlipped: false };
+    this.state = { 
+      isFlipped: false,
+      names: [
+         {'name': 'Ben', 'id': 1},
+         {'name': 'Susan', 'id': 2},
+         {'name': 'Robert', 'id': 3},
+         {'name': 'Mary', 'id': 4},
+         {'name': 'Daniel', 'id': 5},
+         {'name': 'Laura', 'id': 6},
+         {'name': 'John', 'id': 7},
+         {'name': 'Debra', 'id': 8},
+         {'name': 'Aron', 'id': 9},
+         {'name': 'Ann', 'id': 10},
+         {'name': 'Steve', 'id': 11},
+         {'name': 'Olivia', 'id': 12}
+      ]
+    };
   }
 
   static navigationOptions = {
@@ -42,11 +53,36 @@ class ChatScreen extends React.Component {
   _renderAll = () => {
     return (
       <Image source={require('../assets/images/bg.png')} style={styles.container}>
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-          <TouchableOpacity style={{backgroundColor: 'black', padding: 20}} onPress={this._flip}>
-            <Text style={{fontSize: 32, color: 'white'}}>Flip to Back!</Text>
-          </TouchableOpacity>
-        </View>
+          <ScrollView >
+          <Text style={{fontSize:96}}>Scroll me plz</Text>
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Text style={{fontSize:96}}>If you like</Text>
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Text style={{fontSize:96}}>Scrolling down</Text>
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Text style={{fontSize:96}}>What's the best</Text>
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Text style={{fontSize:96}}>Framework around?</Text>
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} />
+          <Text style={{fontSize:80}}>React Native</Text>
+        </ScrollView>
       </Image>
     );
   }
@@ -78,4 +114,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default ChatScreen;
+export default GridScreen;
