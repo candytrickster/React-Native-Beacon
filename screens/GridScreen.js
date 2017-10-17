@@ -14,8 +14,21 @@ class GridScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { 
-      
+    this.state = {
+      isolator: {
+        name: 'Isolator',
+        clue: "",
+        hint: "",
+        found: "false",
+        address: "",
+      },
+      bell: {
+        name: 'Liberty Bell',
+        clue: "",
+        hint: "",
+        found: "false",
+        address: "",
+      }
     };
   }
 
@@ -43,12 +56,12 @@ class GridScreen extends React.Component {
     return (
       <Image source={require('../assets/images/bg.png')} style={styles.container}>
         <ScrollView>
-          <Beacon name='Number 1'/>
-          <Beacon name='Number 2'/>
-          <Beacon name='Number 3'/>
-          <Beacon name='Number 4'/>
-          <Beacon name='Number 4'/>
-          <Beacon name='Number 4'/>
+          <TouchableOpacity onPress={this._flip.bind(this,'isolator')}>
+            <Beacon name={this.state.isolator.name}/>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this._flip.bind(this,this.state.bell)}>
+            <Beacon name={this.state.bell.name}/>
+          </TouchableOpacity>
           <Beacon name='qwaerstyuikjhgfdsaqwet5y6ujk'/>
         </ScrollView>
       </Image>
@@ -58,16 +71,35 @@ class GridScreen extends React.Component {
   _renderIndividual = () => {
     return (
       <View style={{flex: 1, backgroundColor: '#1565C0', justifyContent: 'center', alignItems: 'center'}}>
-        <TouchableOpacity style={{backgroundColor: 'black', padding: 20}} onPress={this._flip}>
-          <Text style={{fontSize: 32, color: 'white'}}>Flip to Front!</Text>
+        <TouchableOpacity style={{backgroundColor: 'black', padding: 20}} onPress={this._flip.bind(this, this.state.name)}>
+          <Text style={{fontSize: 32, color: 'white'}}>Flip to Front! {this.state.name}</Text>
         </TouchableOpacity>
       </View>
     );
   }
  
-  _flip = () => {
-    this.setState({isFlipped: !this.state.isFlipped});
-  } 
+  _flip = (item) => {
+    this.setState({
+      isFlipped: !this.state.isFlipped,
+    });
+
+    switch(item) {
+      case 'isolator':
+        this.setState({isolator:{name:'hey'}});
+        break;
+    }
+  }
+
+  _found = (item) => {
+    switch(item) {
+      case 'isolator':
+        this.setState({isolator:{found:true}});
+        break;
+    }
+  }
+
+
+
 }
 
 const styles = StyleSheet.create({
