@@ -11,6 +11,8 @@ import FlipView from 'react-native-flip-view';
 import StatusBar from '../components/StatusBar';
 import Beacon from '../components/Beacon';
 
+const maxItems = 10;
+
 class GridScreen extends React.Component {
 
   constructor(props) {
@@ -68,32 +70,45 @@ class GridScreen extends React.Component {
     return (
       <Image source={require('../assets/images/bg.png')} style={styles.container}>
         <ScrollView>
-          <Grid>
-            <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
-              <Row>
-                <TouchableOpacity onPress={this._flip.bind(this,'isolator','this is the isolator clue','this is the isolator hint')}>
-                  <Beacon name={this.state.isolator.name} found={this.state.isolator.found} address='0C:F3:EE:0D:A4:4C' image='isolator'/>
-                </TouchableOpacity>
-              </Row>
-              <Row>
-                <TouchableOpacity onPress={this._flip.bind(this,'bell','this is the bell clue','this is the bell hint')}>
-                  <Beacon name={this.state.bell.name} found={this.state.bell.found} address='0C:F3:EE:0D:A4:4C' image='bell'/>
-                </TouchableOpacity>
-              </Row>
-            </Col>
-            <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
-              <Row>
-                <TouchableOpacity onPress={this._flip.bind(this,'walker','this is the walker clue','this is the walker hint')}>
-                  <Beacon name={this.state.walker.name} found={this.state.walker.found} address='0C:F3:EE:0D:A4:4C' image='walker'/>
-                </TouchableOpacity>
-              </Row>
-              <Row>
-                <TouchableOpacity onPress={this._flip.bind(this,'supremeCourt','this is the supremeCourt clue','this is the supremeCourt hint')}>
-                  <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} address='0C:F3:EE:0D:A4:4C' image='supremeCourt'/>
-                </TouchableOpacity>
-              </Row>
-            </Col>
-          </Grid>
+          {(this.state.numFound == maxItems) ? (
+            <Text>Yay you found all the items!</Text>
+          ): (
+            <Grid>
+              <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
+                <Row>
+                  {(this.state.isolator.found == 'true') ? (
+                    <Beacon name={this.state.isolator.name} found={this.state.isolator.found} address='0C:F3:EE:0D:A4:4C' image='isolator'/>
+                  ) : (
+                    <TouchableOpacity onPress={this._flip.bind(this,'isolator','this is the isolator clue','this is the isolator hint')}>
+                      <Beacon name={this.state.isolator.name} found={this.state.isolator.found} address='0C:F3:EE:0D:A4:4C' image='isolator'/>
+                    </TouchableOpacity>
+                  )}
+                </Row>
+                <Row>
+                  {(this.state.bell.found == 'true') ? (
+                    <Beacon name={this.state.bell.name} found={this.state.bell.found} address='0C:F3:EE:0D:A4:4C' image='bell'/>
+                  ) : (
+                    <TouchableOpacity onPress={this._flip.bind(this,'bell','this is the bell clue','this is the bell hint')}>
+                      <Beacon name={this.state.bell.name} found={this.state.bell.found} address='0C:F3:EE:0D:A4:4C' image='bell'/>
+                    </TouchableOpacity>
+                  )}
+                </Row>
+              </Col>
+              <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
+                <Row>
+                  <TouchableOpacity onPress={this._flip.bind(this,'walker','this is the walker clue','this is the walker hint')}>
+                    <Beacon name={this.state.walker.name} found={this.state.walker.found} address='0C:F3:EE:0D:A4:4C' image='walker'/>
+                  </TouchableOpacity>
+                </Row>
+                <Row>
+                  <TouchableOpacity onPress={this._flip.bind(this,'supremeCourt','this is the supremeCourt clue','this is the supremeCourt hint')}>
+                    <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} address='0C:F3:EE:0D:A4:4C' image='supremeCourt'/>
+                  </TouchableOpacity>
+                </Row>
+              </Col>
+            </Grid>
+          )}
+
         </ScrollView>
       </Image>
     );
