@@ -39,7 +39,6 @@ class Beacon extends Component{
     });
   }
 
-
   render() {
 
   	var imageIndex;
@@ -49,6 +48,15 @@ class Beacon extends Component{
     		break;
     	case 'Liberty Bell':
     		(this.props.found == 'true') ? (imageIndex = 2) : (imageIndex = 3);
+    		break;
+    	case 'Olene Walker':
+    		(this.props.found == 'true') ? (imageIndex = 4) : (imageIndex = 5);
+    		break;
+    	case 'Senate chamber':
+    		(this.props.found == 'true') ? (imageIndex = 8) : (imageIndex = 9);
+    		break;
+    	case 'Supreme court':
+    		(this.props.found == 'true') ? (imageIndex = 6) : (imageIndex = 7);
     		break;
     }
 
@@ -67,15 +75,16 @@ class Beacon extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: 200,
-    height: 250,
+    width: 130,
+    height: 150,
     backgroundColor:'transparent',
     justifyContent: 'center',
     alignItems: 'center',
   },
   beaconItem: {
-    width: 100,
-    height: 150,
+    width: 50,
+    height: 100,
+    resizeMode: 'contain',
     justifyContent: 'center',
     alignItems: 'center',
   }

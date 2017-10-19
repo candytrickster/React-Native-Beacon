@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, Button, Easing, TouchableOpacity, Animated, Image, StyleSheet, ScrollView } from 'react-native';
+import {Grid, Col, Row} from 'react-native-easy-grid';
 import { StackNavigator } from 'react-navigation';
 import { MenuContext } from 'react-native-popup-menu';
 import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu';
@@ -23,6 +24,18 @@ class GridScreen extends React.Component {
       bell: {
         name: 'Liberty Bell',
         found: "false",
+      },
+      walker: {
+        name: 'Olene Walker',
+        found: "false"
+      },
+      senate: {
+        name: 'Senate chamber',
+        found: "false"
+      },
+      supremeCourt: {
+        name: 'Supreme court',
+        found: "false"
       }
     };
   }
@@ -55,15 +68,32 @@ class GridScreen extends React.Component {
     return (
       <Image source={require('../assets/images/bg.png')} style={styles.container}>
         <ScrollView>
-          <TouchableOpacity onPress={this._flip.bind(this,'isolator','this is the isolator clue','this is the isolator hint')}>
-            <Beacon name={this.state.isolator.name} found={this.state.isolator.found} address='0C:F3:EE:0D:A4:4C' image='isolator'/>
-            <Text>{this.state.isolator.found}</Text>
-            <Text>{this.state.clue}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this._flip.bind(this,'bell','this is the bell clue','this is the bell hint')}>
-            <Beacon name={this.state.bell.name} found={this.state.bell.found} address='0C:F3:EE:0D:A4:4C' image='bell'/>
-          </TouchableOpacity>
-          <Beacon name='qwaerstyuikjhgfdsaqwet5y6ujk'/>
+          <Grid>
+            <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
+              <Row>
+                <TouchableOpacity onPress={this._flip.bind(this,'isolator','this is the isolator clue','this is the isolator hint')}>
+                  <Beacon name={this.state.isolator.name} found={this.state.isolator.found} address='0C:F3:EE:0D:A4:4C' image='isolator'/>
+                </TouchableOpacity>
+              </Row>
+              <Row>
+                <TouchableOpacity onPress={this._flip.bind(this,'bell','this is the bell clue','this is the bell hint')}>
+                  <Beacon name={this.state.bell.name} found={this.state.bell.found} address='0C:F3:EE:0D:A4:4C' image='bell'/>
+                </TouchableOpacity>
+              </Row>
+            </Col>
+            <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
+              <Row>
+                <TouchableOpacity onPress={this._flip.bind(this,'walker','this is the walker clue','this is the walker hint')}>
+                  <Beacon name={this.state.walker.name} found={this.state.walker.found} address='0C:F3:EE:0D:A4:4C' image='walker'/>
+                </TouchableOpacity>
+              </Row>
+              <Row>
+                <TouchableOpacity onPress={this._flip.bind(this,'supremeCourt','this is the supremeCourt clue','this is the supremeCourt hint')}>
+                  <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} address='0C:F3:EE:0D:A4:4C' image='supremeCourt'/>
+                </TouchableOpacity>
+              </Row>
+            </Col>
+          </Grid>
         </ScrollView>
       </Image>
     );
@@ -110,6 +140,11 @@ class GridScreen extends React.Component {
   }
 
   _found = (item) => {
+
+    this.setState({
+      numFound: this.state.numFound+1
+    });
+
     switch(item) {
       case 'isolator':
         this.setState(
@@ -125,6 +160,26 @@ class GridScreen extends React.Component {
         this.setState(
           (prevState) => ({
             bell: Object.assign({}, prevState.bell, {
+              found: 'true'
+            }),
+            numFound: this.state.numFound+1
+          })
+        );
+        break;
+      case 'walker':
+        this.setState(
+          (prevState) => ({
+            walker: Object.assign({}, prevState.walker, {
+              found: 'true'
+            }),
+            numFound: this.state.numFound+1
+          })
+        );
+        break;
+      case 'supremeCourt':
+        this.setState(
+          (prevState) => ({
+            supremeCourt: Object.assign({}, prevState.supremeCourt, {
               found: 'true'
             }),
             numFound: this.state.numFound+1
