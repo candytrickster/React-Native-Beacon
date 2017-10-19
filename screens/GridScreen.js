@@ -5,11 +5,13 @@ import { StackNavigator } from 'react-navigation';
 import { MenuContext } from 'react-native-popup-menu';
 import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu';
 import FlipView from 'react-native-flip-view';
+import Expo from 'expo';
 
 // import beaconList from '../assets/data/beacons.js';
 
 import StatusBar from '../components/StatusBar';
 import Beacon from '../components/Beacon';
+import Header from '../components/Header'
 
 const maxItems = 10;
 
@@ -42,6 +44,16 @@ class GridScreen extends React.Component {
     };
   }
 
+  async componentWillMount() {
+    await Expo.Font.loadAsync({
+      titlewave: require("../assets/fonts/Title-Wave-Regular.ttf"),
+      playfair: require("../assets/fonts/Playfair.ttf"),
+      avenir: require("../assets/fonts/Avenir.otf")
+    });
+
+    this.setState({ isReady: true });
+  }
+
   static navigationOptions = {
     title: 'grid screen.',
     header:{ visible:false }
@@ -69,7 +81,9 @@ class GridScreen extends React.Component {
   _renderAll = () => {
     return (
       <Image source={require('../assets/images/bg.png')} style={styles.container}>
+        <Header/>
         <ScrollView>
+          <Text style={styles.title}>Found {this.state.numFound} of {maxItems}</Text>
           {(this.state.numFound == maxItems) ? (
             <Text>Yay you found all the items!</Text>
           ): (
@@ -96,14 +110,22 @@ class GridScreen extends React.Component {
               </Col>
               <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
                 <Row>
-                  <TouchableOpacity onPress={this._flip.bind(this,'walker','this is the walker clue','this is the walker hint')}>
+                  {(this.state.walker.found == 'true') ? (
                     <Beacon name={this.state.walker.name} found={this.state.walker.found} address='0C:F3:EE:0D:A4:4C' image='walker'/>
-                  </TouchableOpacity>
+                  ) : (
+                    <TouchableOpacity onPress={this._flip.bind(this,'walker','this is the walker clue','this is the walker hint')}>
+                      <Beacon name={this.state.walker.name} found={this.state.walker.found} address='0C:F3:EE:0D:A4:4C' image='walker'/>
+                    </TouchableOpacity>
+                  )}
                 </Row>
                 <Row>
-                  <TouchableOpacity onPress={this._flip.bind(this,'supremeCourt','this is the supremeCourt clue','this is the supremeCourt hint')}>
+                  {(this.state.supremeCourt.found == 'true') ? (
                     <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} address='0C:F3:EE:0D:A4:4C' image='supremeCourt'/>
-                  </TouchableOpacity>
+                  ) : (
+                    <TouchableOpacity onPress={this._flip.bind(this,'supremeCourt','this is the supremeCourt clue','this is the supremeCourt hint')}>
+                      <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} address='0C:F3:EE:0D:A4:4C' image='supremeCourt'/>
+                    </TouchableOpacity>
+                  )}
                 </Row>
               </Col>
             </Grid>
@@ -209,6 +231,13 @@ class GridScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  title:{
+    fontFamily: 'avenir',
+    fontSize: 38,
+    color: '#fff',
+    textAlign: 'center',
+    paddingTop: 50
+  },
   container: {
     flex: 1,
     width: undefined,
