@@ -25,9 +25,7 @@ class Beacon extends Component{
 
     this.state = {
     	name:"",
-    	clue:"",
-    	hint:"",
-    	found:"false",
+    	found:"",
     	address: "",
     	image: ""
     };
@@ -36,11 +34,26 @@ class Beacon extends Component{
   componentDidMount() {
     this.setState({
     	name: this.props.name,
-    	clue: this.props.clue,
-    	hint: this.props.hint,
-    	address: this.props.address,
-    	image: 2
+    	found: this.props.found,
+    	address: this.props.address
     });
+    switch(this.props.name){
+    	case 'Isolator':
+    		(this.props.found == 'true') ? (this.setState({image:0})) : (this.setState({image:1}));
+    		break;
+    	case 'Liberty Bell':
+    		(this.props.found == 'true') ? (this.setState({image:2})) : (this.setState({image:3}));
+    		break;
+    }
+  }
+
+  componentWillReceiveProps() {
+  	this.setState({
+    	found: this.props.found
+    });
+    if(this.props.found == 'true'){
+    	this.setState({image:this.state.image-1});
+    }
   }
 
   render() {
@@ -49,7 +62,7 @@ class Beacon extends Component{
     	<View>
   			<Image source={require('../assets/images/grid-items/gridItemBg.png')} style={styles.container}>
   				<Image source={images[this.state.image]} style={styles.beaconItem}>
-  					<Text >Hello {this.props.name}</Text>
+  					<Text>Hello {(this.state.found == 'true') ? this.state.name : '???'}</Text>
   				</Image>
   			</Image>
     	</View>
