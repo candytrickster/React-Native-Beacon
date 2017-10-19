@@ -35,7 +35,7 @@ class Header extends Component{
     return (
     	<View style={styles.container}>
     		<Text style={styles.capitolText}>UTAH CAPITOL</Text>
-        <Hr lineStyle={{ backgroundColor: "white", top:7}}/>
+        <Hr lineStyle={{ backgroundColor: "white", top:7, marginLeft: 75, marginRight: 75}}/>
         <Text style={styles.scavengerText}>SCAVENGER HUNT</Text>
     	</View>
     );
@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#002a5c',
-    height: 80
+    height: 80,
+    width: width(100)
   },
   capitolText: {
     fontFamily: 'playfair',

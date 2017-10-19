@@ -233,7 +233,7 @@ class GridScreen extends React.Component {
 const styles = StyleSheet.create({
   title:{
     fontFamily: 'avenir',
-    fontSize: 38,
+    fontSize: 45,
     color: '#fff',
     textAlign: 'center',
     paddingTop: 50
