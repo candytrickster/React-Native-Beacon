@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, Animated, Image, Easing} from 'react-native';
 import { width, height, totalSize } from 'react-native-dimension';
 
-class FadeIn extends Component{
+class FunFact extends Component{
   
   constructor(props) {
     super(props);
@@ -25,4 +25,4 @@ class FadeIn extends Component{
   }
 }
 
-export default FadeIn;
+export default FunFact;

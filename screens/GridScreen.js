@@ -11,7 +11,8 @@ import Expo from 'expo';
 
 import StatusBar from '../components/StatusBar';
 import Beacon from '../components/Beacon';
-import Header from '../components/Header'
+import Header from '../components/Header';
+import BackBeacon from '../components/BackBeacon';
 
 const maxItems = 10;
 
@@ -21,6 +22,10 @@ class GridScreen extends React.Component {
     super(props);
     this.state = {
       numFound: 0,
+      currentItem: {
+        name: '',
+        found:''
+      },
       isolator: {
         name: 'Isolator',
         found: "false"
@@ -138,11 +143,15 @@ class GridScreen extends React.Component {
  
   _renderIndividual = () => {
     return (
-      <View style={{flex: 1, backgroundColor: '#1565C0', justifyContent: 'center', alignItems: 'center'}}>
-        <TouchableOpacity style={{backgroundColor: 'black', padding: 20}} onPress={this._flip.bind(this, '','','')}>
-          <Text style={{fontSize: 32, color: 'white'}}>Flip to Front! {this.state.name}</Text>
-        </TouchableOpacity>
-      </View>
+      <Image source={require('../assets/images/bg.png')} style={styles.container}>
+        <Header/>
+        <ScrollView>
+          <BackBeacon name={this.state.currentItem.name} found={this.state.currentItem.found} image={this.state.currentItem.name}/>
+          <TouchableOpacity style={{backgroundColor: 'black', padding: 20}} onPress={this._flip.bind(this, '','','')}>
+            <Text style={{fontSize: 32, color: 'white'}}>BACK</Text>
+          </TouchableOpacity>
+        </ScrollView>
+      </Image>
     );
   }
  
@@ -154,24 +163,20 @@ class GridScreen extends React.Component {
 
     switch(item) {
       case 'isolator':
-        this.setState(
-          (prevState) => ({
-            isolator: Object.assign({}, prevState.isolator, {
-              found: 'true'
-            }),
-            numFound: this.state.numFound+1
-          })
-        );
+        this.setState({
+          currentItem: {
+            name:'Isolator',
+            found: this.state.isolator.found
+          }
+        });
         break;
       case 'bell':
-        this.setState(
-          (prevState) => ({
-            bell: Object.assign({}, prevState.bell, {
-              found: 'true'
-            }),
-            numFound: this.state.numFound+1
-          })
-        );
+        this.setState({
+          currentItem: {
+            name:'Liberty Bell',
+            found: this.state.bell.found
+          }
+        });
         break;
     }
   }
@@ -245,6 +250,10 @@ const styles = StyleSheet.create({
     backgroundColor:'transparent',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  backContainer: {
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 
 });
