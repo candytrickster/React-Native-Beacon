@@ -61,7 +61,7 @@ class GridScreen extends React.Component {
 
   componentDidMount() {
     this.interval = setInterval(() => {
-        this._found('isolator');
+        this._found('bell');
     },5000);
   }
 
@@ -148,10 +148,7 @@ class GridScreen extends React.Component {
       <Image source={require('../assets/images/bg.png')} style={styles.container}>
         <Header/>
         <ScrollView>
-          { this.state.isolator.found ? 
-            <BackBeacon name={this.state.currentItem.name} found={this.state.currentItem.found} image={this.state.currentItem.name}/> : 
-            <Text style={{fontSize: 32, color: 'white'}}>Hey it is not found</Text>
-          }
+          <BackBeacon name={this.state.currentItem.name} found={this.state.currentItem.found} image={this.state.currentItem.name}/>
           <TouchableOpacity style={{backgroundColor: 'black', padding: 20}} onPress={this._flip.bind(this, '','','')}>
             <Text style={{fontSize: 32, color: 'white'}}>BACK</Text>
           </TouchableOpacity>
@@ -186,12 +183,15 @@ class GridScreen extends React.Component {
         // this._found('isolator');
         break;
       case 'bell':
-        this.setState({
-          currentItem: {
-            name:'Liberty Bell',
-            found: this.state.bell.found
-          }
-        });
+        this.setState(
+          (prevState) => ({
+            currentItem: Object.assign({}, prevState.currentItem, {
+              found: this.state.bell.found,
+              name: this.state.bell.name
+            })
+          })
+        );
+        console.log('gonna call it from bell');
         break;
       case 'walker':
         this.setState({
@@ -253,6 +253,14 @@ class GridScreen extends React.Component {
             })
           })
         );
+        this.setState(
+          (prevState) => ({
+            currentItem: Object.assign({}, prevState.currentItem, {
+              name: this.state.bell.name,
+              found: this.state.bell.found
+            })
+          })
+        );
         break;
       case 'walker':
         await this.setState(
@@ -262,12 +270,28 @@ class GridScreen extends React.Component {
             })
           })
         );
+        this.setState(
+          (prevState) => ({
+            currentItem: Object.assign({}, prevState.currentItem, {
+              name: this.state.walker.name,
+              found: this.state.walker.found
+            })
+          })
+        );
         break;
       case 'supremeCourt':
         await this.setState(
           (prevState) => ({
             supremeCourt: Object.assign({}, prevState.supremeCourt, {
               found: true
+            })
+          })
+        );
+        this.setState(
+          (prevState) => ({
+            currentItem: Object.assign({}, prevState.currentItem, {
+              name: this.state.supremeCourt.name,
+              found: this.state.supremeCourt.found
             })
           })
         );
