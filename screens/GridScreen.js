@@ -23,28 +23,28 @@ class GridScreen extends React.Component {
     this.state = {
       numFound: 0,
       currentItem: {
-        name: '',
-        found:''
+        name: 'currentItem',
+        found: false
       },
       isolator: {
         name: 'Isolator',
-        found: "false"
+        found: false
       },
       bell: {
         name: 'Liberty Bell',
-        found: "false",
+        found: false,
       },
       walker: {
         name: 'Olene Walker',
-        found: "false"
+        found: false
       },
       senate: {
-        name: 'Senate chamber',
-        found: "false"
+        name: 'Senate Chamber',
+        found: false
       },
       supremeCourt: {
-        name: 'Supreme court',
-        found: "false"
+        name: 'Supreme Court',
+        found: false
       }
     };
   }
@@ -57,6 +57,12 @@ class GridScreen extends React.Component {
     });
 
     this.setState({ isReady: true });
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+        this._found('isolator');
+    },5000);
   }
 
   static navigationOptions = {
@@ -78,10 +84,6 @@ class GridScreen extends React.Component {
                 perspective={1000}/>
     );
   }
-// name:"",
-// found:"false",
-// address: "",
-// image: ""
 
   _renderAll = () => {
     return (
@@ -89,13 +91,13 @@ class GridScreen extends React.Component {
         <Header/>
         <ScrollView>
           <Text style={styles.title}>Found {this.state.numFound} of {maxItems}</Text>
-          {(this.state.numFound == maxItems) ? (
+          {(this.state.numFound >= maxItems) ? (
             <Text>Yay you found all the items!</Text>
           ): (
             <Grid>
               <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
                 <Row>
-                  {(this.state.isolator.found == 'true') ? (
+                  {(this.state.isolator.found) ? (
                     <Beacon name={this.state.isolator.name} found={this.state.isolator.found} address='0C:F3:EE:0D:A4:4C' image='isolator'/>
                   ) : (
                     <TouchableOpacity onPress={this._flip.bind(this,'isolator','this is the isolator clue','this is the isolator hint')}>
@@ -104,7 +106,7 @@ class GridScreen extends React.Component {
                   )}
                 </Row>
                 <Row>
-                  {(this.state.bell.found == 'true') ? (
+                  {(this.state.bell.found) ? (
                     <Beacon name={this.state.bell.name} found={this.state.bell.found} address='0C:F3:EE:0D:A4:4C' image='bell'/>
                   ) : (
                     <TouchableOpacity onPress={this._flip.bind(this,'bell','this is the bell clue','this is the bell hint')}>
@@ -115,7 +117,7 @@ class GridScreen extends React.Component {
               </Col>
               <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
                 <Row>
-                  {(this.state.walker.found == 'true') ? (
+                  {(this.state.walker.found) ? (
                     <Beacon name={this.state.walker.name} found={this.state.walker.found} address='0C:F3:EE:0D:A4:4C' image='walker'/>
                   ) : (
                     <TouchableOpacity onPress={this._flip.bind(this,'walker','this is the walker clue','this is the walker hint')}>
@@ -124,7 +126,7 @@ class GridScreen extends React.Component {
                   )}
                 </Row>
                 <Row>
-                  {(this.state.supremeCourt.found == 'true') ? (
+                  {(this.state.supremeCourt.found) ? (
                     <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} address='0C:F3:EE:0D:A4:4C' image='supremeCourt'/>
                   ) : (
                     <TouchableOpacity onPress={this._flip.bind(this,'supremeCourt','this is the supremeCourt clue','this is the supremeCourt hint')}>
@@ -146,7 +148,10 @@ class GridScreen extends React.Component {
       <Image source={require('../assets/images/bg.png')} style={styles.container}>
         <Header/>
         <ScrollView>
-          <BackBeacon name={this.state.currentItem.name} found={this.state.currentItem.found} image={this.state.currentItem.name}/>
+          { this.state.isolator.found ? 
+            <BackBeacon name={this.state.currentItem.name} found={this.state.currentItem.found} image={this.state.currentItem.name}/> : 
+            <Text style={{fontSize: 32, color: 'white'}}>Hey it is not found</Text>
+          }
           <TouchableOpacity style={{backgroundColor: 'black', padding: 20}} onPress={this._flip.bind(this, '','','')}>
             <Text style={{fontSize: 32, color: 'white'}}>BACK</Text>
           </TouchableOpacity>
@@ -157,18 +162,28 @@ class GridScreen extends React.Component {
  
   _flip = (item, clue, hint) => {
     this.setState({
-      isFlipped: !this.state.isFlipped,
-      clue:clue
+      isFlipped: !this.state.isFlipped
     });
+    // await this.setState(
+    //       (prevState) => ({
+    //         isolator: Object.assign({}, prevState.isolator, {
+    //           found: true
+    //         })
+    //       })
+    //     );
 
     switch(item) {
       case 'isolator':
-        this.setState({
-          currentItem: {
-            name:'Isolator',
-            found: this.state.isolator.found
-          }
-        });
+        this.setState(
+          (prevState) => ({
+            currentItem: Object.assign({}, prevState.currentItem, {
+              found: this.state.isolator.found,
+              name: this.state.isolator.name
+            })
+          })
+        );
+        console.log('gonna call it');
+        // this._found('isolator');
         break;
       case 'bell':
         this.setState({
@@ -178,10 +193,34 @@ class GridScreen extends React.Component {
           }
         });
         break;
+      case 'walker':
+        this.setState({
+          currentItem: {
+            name:'Olene Walker',
+            found: this.state.walker.found
+          }
+        });
+        break;
+      case 'senate':
+        this.setState({
+          currentItem: {
+            name:'Liberty Bell',
+            found: this.state.senate.found
+          }
+        });
+        break;
+      case 'supremeCourt':
+        this.setState({
+          currentItem: {
+            name:'Supreme Court',
+            found: this.state.supremeCourt.found
+          }
+        });
+        break;
     }
   }
 
-  _found = (item) => {
+  async _found (item) {
 
     this.setState({
       numFound: this.state.numFound+1
@@ -189,42 +228,47 @@ class GridScreen extends React.Component {
 
     switch(item) {
       case 'isolator':
-        this.setState(
+        await this.setState(
           (prevState) => ({
             isolator: Object.assign({}, prevState.isolator, {
-              found: 'true'
-            }),
-            numFound: this.state.numFound+1
+              found: true
+            })
           })
         );
-        break;
-      case 'bell':
         this.setState(
           (prevState) => ({
+            currentItem: Object.assign({}, prevState.currentItem, {
+              name: this.state.isolator.name,
+              found: this.state.isolator.found
+            })
+          })
+        );
+        console.log('made it here');
+        break;
+      case 'bell':
+        await this.setState(
+          (prevState) => ({
             bell: Object.assign({}, prevState.bell, {
-              found: 'true'
-            }),
-            numFound: this.state.numFound+1
+              found: true
+            })
           })
         );
         break;
       case 'walker':
-        this.setState(
+        await this.setState(
           (prevState) => ({
             walker: Object.assign({}, prevState.walker, {
-              found: 'true'
-            }),
-            numFound: this.state.numFound+1
+              found: true
+            })
           })
         );
         break;
       case 'supremeCourt':
-        this.setState(
+        await this.setState(
           (prevState) => ({
             supremeCourt: Object.assign({}, prevState.supremeCourt, {
-              found: 'true'
-            }),
-            numFound: this.state.numFound+1
+              found: true
+            })
           })
         );
         break;

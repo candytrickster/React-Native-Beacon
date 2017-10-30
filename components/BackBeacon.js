@@ -49,30 +49,38 @@ class BackBeacon extends Component{
     });
   }
 
+  componentWillReceiveProps() {
+    this.setState({
+      name: this.props.name,
+      found: this.props.found,
+      address: this.props.address
+    });
+  }
+
   render() {
 
     var imageIndex;
     switch(this.props.name){
       case 'Isolator':
-        (this.props.found == 'true') ? (imageIndex = 0) : (imageIndex = 1);
+        (this.props.found) ? (imageIndex = 0) : (imageIndex = 1);
         break;
       case 'Liberty Bell':
-        (this.props.found == 'true') ? (imageIndex = 2) : (imageIndex = 3);
+        (this.props.found) ? (imageIndex = 2) : (imageIndex = 3);
         break;
       case 'Olene Walker':
-        (this.props.found == 'true') ? (imageIndex = 4) : (imageIndex = 5);
+        (this.props.found) ? (imageIndex = 4) : (imageIndex = 5);
         break;
-      case 'Senate chamber':
-        (this.props.found == 'true') ? (imageIndex = 8) : (imageIndex = 9);
+      case 'Senate Chamber':
+        (this.props.found) ? (imageIndex = 8) : (imageIndex = 9);
         break;
-      case 'Supreme court':
-        (this.props.found == 'true') ? (imageIndex = 6) : (imageIndex = 7);
+      case 'Supreme Court':
+        (this.props.found) ? (imageIndex = 6) : (imageIndex = 7);
         break;
     }
 
     return (
       <View style={styles.viewContainer}>
-        <Text style={styles.title}>{(this.props.found == 'true') ? this.props.name : '???'}</Text>
+        <Text style={styles.title}>{(this.props.found) ? this.props.name : '???'}</Text>
         <Image source={require('../assets/images/grid-items/gridItemBg.png')} style={styles.container}>
           <Image source={images[imageIndex]} style={styles.beaconItem}>
             
@@ -99,8 +107,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   beaconItem: {
-    width: 100,
-    height: 80,
+    width: 200,
+    height: 180,
     resizeMode: 'contain',
     justifyContent: 'center',
     alignItems: 'center'
