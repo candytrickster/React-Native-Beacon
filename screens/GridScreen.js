@@ -151,8 +151,8 @@ class GridScreen extends React.Component {
     return (
       <Image source={require('../assets/images/bg.png')} style={styles.container}>
         <Header>
-          <TouchableOpacity style={{backgroundColor: 'black', padding: 20}} onPress={this._flip.bind(this, '','','')}>
-            <Text style={{fontSize: 32, color: 'white'}}>BACK</Text>
+          <TouchableOpacity onPress={this._flip.bind(this, '','','')}>
+            <Text style={{fontSize: 12, color: 'white'}}>BACK</Text>
           </TouchableOpacity>
         </Header>
         <ScrollView>
