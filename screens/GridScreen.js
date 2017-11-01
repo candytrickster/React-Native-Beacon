@@ -163,8 +163,8 @@ class GridScreen extends React.Component {
             clue={this.state.currentItem.clue}
             address={this.state.currentItem.address}
           />
-          <Hint/>
         </ScrollView>
+        <Hint/>
       </Image>
     );
   }
