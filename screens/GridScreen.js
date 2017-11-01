@@ -13,6 +13,7 @@ import StatusBar from '../components/StatusBar';
 import Beacon from '../components/Beacon';
 import Header from '../components/Header';
 import BackBeacon from '../components/BackBeacon';
+import Hint from '../components/Hint';
 
 const maxItems = 10;
 
@@ -24,7 +25,10 @@ class GridScreen extends React.Component {
       numFound: 0,
       currentItem: {
         name: 'currentItem',
-        found: false
+        found: false,
+        clue: 'clue',
+        hint: 'hint',
+        address: 'address'
       },
       isolator: {
         name: 'Isolator',
@@ -60,9 +64,9 @@ class GridScreen extends React.Component {
   }
 
   componentDidMount() {
-    this.interval = setInterval(() => {
-        this._found('bell');
-    },5000);
+    // this.interval = setInterval(() => {
+    //     this._found('isolator');
+    // },5000);
   }
 
   static navigationOptions = {
@@ -98,19 +102,19 @@ class GridScreen extends React.Component {
               <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
                 <Row>
                   {(this.state.isolator.found) ? (
-                    <Beacon name={this.state.isolator.name} found={this.state.isolator.found} address='0C:F3:EE:0D:A4:4C' image='isolator'/>
+                    <Beacon name={this.state.isolator.name} found={this.state.isolator.found} image='isolator'/>
                   ) : (
                     <TouchableOpacity onPress={this._flip.bind(this,'isolator','this is the isolator clue','this is the isolator hint')}>
-                      <Beacon name={this.state.isolator.name} found={this.state.isolator.found} address='0C:F3:EE:0D:A4:4C' image='isolator'/>
+                      <Beacon name={this.state.isolator.name} found={this.state.isolator.found} image='isolator'/>
                     </TouchableOpacity>
                   )}
                 </Row>
                 <Row>
                   {(this.state.bell.found) ? (
-                    <Beacon name={this.state.bell.name} found={this.state.bell.found} address='0C:F3:EE:0D:A4:4C' image='bell'/>
+                    <Beacon name={this.state.bell.name} found={this.state.bell.found} image='bell'/>
                   ) : (
                     <TouchableOpacity onPress={this._flip.bind(this,'bell','this is the bell clue','this is the bell hint')}>
-                      <Beacon name={this.state.bell.name} found={this.state.bell.found} address='0C:F3:EE:0D:A4:4C' image='bell'/>
+                      <Beacon name={this.state.bell.name} found={this.state.bell.found} image='bell'/>
                     </TouchableOpacity>
                   )}
                 </Row>
@@ -118,19 +122,19 @@ class GridScreen extends React.Component {
               <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
                 <Row>
                   {(this.state.walker.found) ? (
-                    <Beacon name={this.state.walker.name} found={this.state.walker.found} address='0C:F3:EE:0D:A4:4C' image='walker'/>
+                    <Beacon name={this.state.walker.name} found={this.state.walker.found} image='walker'/>
                   ) : (
                     <TouchableOpacity onPress={this._flip.bind(this,'walker','this is the walker clue','this is the walker hint')}>
-                      <Beacon name={this.state.walker.name} found={this.state.walker.found} address='0C:F3:EE:0D:A4:4C' image='walker'/>
+                      <Beacon name={this.state.walker.name} found={this.state.walker.found} image='walker'/>
                     </TouchableOpacity>
                   )}
                 </Row>
                 <Row>
                   {(this.state.supremeCourt.found) ? (
-                    <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} address='0C:F3:EE:0D:A4:4C' image='supremeCourt'/>
+                    <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} image='supremeCourt'/>
                   ) : (
                     <TouchableOpacity onPress={this._flip.bind(this,'supremeCourt','this is the supremeCourt clue','this is the supremeCourt hint')}>
-                      <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} address='0C:F3:EE:0D:A4:4C' image='supremeCourt'/>
+                      <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} image='supremeCourt'/>
                     </TouchableOpacity>
                   )}
                 </Row>
@@ -146,12 +150,20 @@ class GridScreen extends React.Component {
   _renderIndividual = () => {
     return (
       <Image source={require('../assets/images/bg.png')} style={styles.container}>
-        <Header/>
-        <ScrollView>
-          <BackBeacon name={this.state.currentItem.name} found={this.state.currentItem.found} image={this.state.currentItem.name}/>
+        <Header>
           <TouchableOpacity style={{backgroundColor: 'black', padding: 20}} onPress={this._flip.bind(this, '','','')}>
             <Text style={{fontSize: 32, color: 'white'}}>BACK</Text>
           </TouchableOpacity>
+        </Header>
+        <ScrollView>
+          <BackBeacon 
+            name={this.state.currentItem.name} 
+            found={this.state.currentItem.found} 
+            image={this.state.currentItem.name} 
+            clue={this.state.currentItem.clue}
+            address={this.state.currentItem.address}
+          />
+          <Hint/>
         </ScrollView>
       </Image>
     );
@@ -175,47 +187,66 @@ class GridScreen extends React.Component {
           (prevState) => ({
             currentItem: Object.assign({}, prevState.currentItem, {
               found: this.state.isolator.found,
-              name: this.state.isolator.name
+              name: this.state.isolator.name,
+              clue: clue,
+              hint: hint,
+              address: '0C:F3:EE:0D:A4:4C'
             })
           })
         );
-        console.log('gonna call it');
-        // this._found('isolator');
         break;
       case 'bell':
         this.setState(
           (prevState) => ({
             currentItem: Object.assign({}, prevState.currentItem, {
               found: this.state.bell.found,
-              name: this.state.bell.name
+              name: this.state.bell.name,
+              clue: clue,
+              hint: hint,
+              address: '0C:F3:EE:0D:A4:4C'
             })
           })
         );
         console.log('gonna call it from bell');
         break;
       case 'walker':
-        this.setState({
-          currentItem: {
-            name:'Olene Walker',
-            found: this.state.walker.found
-          }
-        });
+        this.setState(
+          (prevState) => ({
+            currentItem: Object.assign({}, prevState.currentItem, {
+              found: this.state.walker.found,
+              name: this.state.walker.name,
+              clue: clue,
+              hint: hint,
+              address: '0C:F3:EE:0D:A4:4C'
+            })
+          })
+        );
         break;
       case 'senate':
-        this.setState({
-          currentItem: {
-            name:'Liberty Bell',
-            found: this.state.senate.found
-          }
-        });
+        this.setState(
+          (prevState) => ({
+            currentItem: Object.assign({}, prevState.currentItem, {
+              found: this.state.senate.found,
+              name: this.state.senate.name,
+              clue: clue,
+              hint: hint,
+              address: '0C:F3:EE:0D:A4:4C'
+            })
+          })
+        );
         break;
       case 'supremeCourt':
-        this.setState({
-          currentItem: {
-            name:'Supreme Court',
-            found: this.state.supremeCourt.found
-          }
-        });
+        this.setState(
+          (prevState) => ({
+            currentItem: Object.assign({}, prevState.currentItem, {
+              found: this.state.supremeCourt.found,
+              name: this.state.supremeCourt.name,
+              clue: clue,
+              hint: hint,
+              address: '0C:F3:EE:0D:A4:4C'
+            })
+          })
+        );
         break;
     }
   }

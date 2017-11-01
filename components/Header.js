@@ -34,10 +34,24 @@ class Header extends Component{
 
     return (
     	<View style={styles.container}>
-    		<Text style={styles.capitolText}>UTAH CAPITOL</Text>
-        <Hr lineStyle={{ backgroundColor: "white", top:7, marginLeft: 75, marginRight: 75}}/>
-        <Text style={styles.scavengerText}>SCAVENGER HUNT</Text>
-    	</View>
+        {this.props.children ? 
+          <View>
+            <View style={styles.backButton}>
+              {this.props.children}
+            </View>
+            <View style={styles.container}><Text style={styles.capitolText}>UTAH CAPITOL</Text>
+              <Hr lineStyle={{ backgroundColor: "white", top:7, marginLeft: 75, marginRight: 75}}/>
+              <Text style={styles.scavengerText}>SCAVENGER HUNT</Text>
+            </View>
+          </View> 
+        :
+          <View style={styles.container}><Text style={styles.capitolText}>UTAH CAPITOL</Text>
+            <Hr lineStyle={{ backgroundColor: "white", top:7, marginLeft: 75, marginRight: 75}}/>
+            <Text style={styles.scavengerText}>SCAVENGER HUNT</Text>
+          </View>
+        }
+    		
+      </View>
     );
   }
 }
@@ -62,6 +76,9 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize:22,
     top:12
+  },
+  backButton: {
+    marginLeft: 100
   }
 
 });

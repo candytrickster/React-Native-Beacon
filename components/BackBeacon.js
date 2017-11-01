@@ -27,6 +27,7 @@ class BackBeacon extends Component{
       found:"",
       address: "",
       image: "",
+      clue: '',
       isReady: false
     };
   }
@@ -45,7 +46,8 @@ class BackBeacon extends Component{
     this.setState({
       name: this.props.name,
       found: this.props.found,
-      address: this.props.address
+      address: this.props.address,
+      clue: this.props.clue
     });
   }
 
@@ -53,7 +55,8 @@ class BackBeacon extends Component{
     this.setState({
       name: this.props.name,
       found: this.props.found,
-      address: this.props.address
+      address: this.props.address,
+      clue: this.props.clue
     });
   }
 

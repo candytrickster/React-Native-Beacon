@@ -25,7 +25,6 @@ class Beacon extends Component{
     this.state = {
     	name:"",
     	found:"",
-    	address: "",
     	image: "",
     	isReady: false
     };
@@ -45,7 +44,6 @@ class Beacon extends Component{
     this.setState({
     	name: this.props.name,
     	found: this.props.found,
-    	address: this.props.address
     });
   }
 
