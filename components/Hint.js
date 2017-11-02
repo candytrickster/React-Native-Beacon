@@ -11,15 +11,8 @@ class Hint extends Component{
     super(props);
 
     this.state = {
-      order: 1,
-      hint: ''
+      order: 1
     };
-  }
-
-  componentDidMount() {
-    this.setState({
-      hint: this.props.hint
-    });
   }
   
   render() {
@@ -35,7 +28,7 @@ class Hint extends Component{
           }
           items={[
             {
-              label: 'This is the hint for this item. Hint hint hint.',
+              label: this.props.hint,
               onPress: () => {}
             }
           ]}

@@ -104,7 +104,7 @@ class GridScreen extends React.Component {
                   {(this.state.isolator.found) ? (
                     <Beacon name={this.state.isolator.name} found={this.state.isolator.found} image='isolator'/>
                   ) : (
-                    <TouchableOpacity onPress={this._flip.bind(this,'isolator','this is the isolator clue','this is the isolator hint')}>
+                    <TouchableOpacity onPress={this._flip.bind(this,'isolator','this is the isolator clue','this is the isolator hint. Im just making this really really long to see what this will look like. oh long hint, how many pepople will read you? Not many. You are purely for looks..')}>
                       <Beacon name={this.state.isolator.name} found={this.state.isolator.found} image='isolator'/>
                     </TouchableOpacity>
                   )}
@@ -164,12 +164,13 @@ class GridScreen extends React.Component {
             address={this.state.currentItem.address}
           />
         </ScrollView>
-        <Hint/>
+        <Hint hint={this.state.currentItem.hint}/>
       </Image>
     );
   }
  
-  _flip = (item, clue, hint) => {
+   async _flip (item, clue, hint) {
+
     this.setState({
       isFlipped: !this.state.isFlipped
     });
@@ -180,10 +181,9 @@ class GridScreen extends React.Component {
     //         })
     //       })
     //     );
-
     switch(item) {
       case 'isolator':
-        this.setState(
+        await this.setState(
           (prevState) => ({
             currentItem: Object.assign({}, prevState.currentItem, {
               found: this.state.isolator.found,
@@ -194,9 +194,10 @@ class GridScreen extends React.Component {
             })
           })
         );
+        console.log(this.state.currentItem.hint);
         break;
       case 'bell':
-        this.setState(
+        await this.setState(
           (prevState) => ({
             currentItem: Object.assign({}, prevState.currentItem, {
               found: this.state.bell.found,
@@ -207,10 +208,9 @@ class GridScreen extends React.Component {
             })
           })
         );
-        console.log('gonna call it from bell');
         break;
       case 'walker':
-        this.setState(
+        await this.setState(
           (prevState) => ({
             currentItem: Object.assign({}, prevState.currentItem, {
               found: this.state.walker.found,
@@ -223,7 +223,7 @@ class GridScreen extends React.Component {
         );
         break;
       case 'senate':
-        this.setState(
+        await this.setState(
           (prevState) => ({
             currentItem: Object.assign({}, prevState.currentItem, {
               found: this.state.senate.found,
@@ -236,7 +236,7 @@ class GridScreen extends React.Component {
         );
         break;
       case 'supremeCourt':
-        this.setState(
+        await this.setState(
           (prevState) => ({
             currentItem: Object.assign({}, prevState.currentItem, {
               found: this.state.supremeCourt.found,
