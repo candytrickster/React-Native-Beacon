@@ -70,7 +70,7 @@ class GridScreen extends React.Component {
 
   componentDidMount() {
     this.interval = setInterval(() => {
-        this._found('bell');
+        this._found('isolator');
     },2000);
   }
 

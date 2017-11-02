@@ -60,8 +60,8 @@ class FunFact extends Component{
       case 'Isolator':
         this.setState(
           (prevState) => ({
-            funFact: funFacts.isolator[this.getRandomNum()]
-            // funFact: funFacts.isolator[3]
+            // funFact: funFacts.isolator[this.getRandomNum()]
+            funFact: funFacts.isolator[3]
           })
         );
         break;
@@ -153,6 +153,7 @@ var styles = StyleSheet.create({
     fontFamily: 'avenir',
     fontSize: 16,
     padding: 15,
+    paddingTop: 8,
     textAlign: 'center'
   },
   playButton: {
@@ -160,7 +161,7 @@ var styles = StyleSheet.create({
     borderRadius: 20,
     width:100,
     top: -10,
-    left: width(35)
+    left: width(34)
   },
   buttonText: {
     textAlign: 'center',
