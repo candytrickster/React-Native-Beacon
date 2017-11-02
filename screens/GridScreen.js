@@ -6,6 +6,7 @@ import { MenuContext } from 'react-native-popup-menu';
 import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu';
 import FlipView from 'react-native-flip-view';
 import Expo from 'expo';
+import { width, height, totalSize } from 'react-native-dimension';
 
 // import beaconList from '../assets/data/beacons.js';
 
@@ -14,6 +15,7 @@ import Beacon from '../components/Beacon';
 import Header from '../components/Header';
 import BackBeacon from '../components/BackBeacon';
 import Hint from '../components/Hint';
+import FunFact from '../components/FunFact';
 
 const maxItems = 10;
 
@@ -64,9 +66,9 @@ class GridScreen extends React.Component {
   }
 
   componentDidMount() {
-    // this.interval = setInterval(() => {
-    //     this._found('isolator');
-    // },5000);
+    this.interval = setInterval(() => {
+        this._found('isolator');
+    },2000);
   }
 
   static navigationOptions = {
@@ -165,6 +167,14 @@ class GridScreen extends React.Component {
           />
         </ScrollView>
         <Hint hint={this.state.currentItem.hint}/>
+        {this.state.currentItem.found ? 
+          <FunFact
+            item={this.state.currentItem.name}
+            value={height(50)}
+            delay={1000}
+          /> :
+          <Text></Text>
+        }
       </Image>
     );
   }
@@ -194,7 +204,6 @@ class GridScreen extends React.Component {
             })
           })
         );
-        console.log(this.state.currentItem.hint);
         break;
       case 'bell':
         await this.setState(
@@ -274,7 +283,6 @@ class GridScreen extends React.Component {
             })
           })
         );
-        console.log('made it here');
         break;
       case 'bell':
         await this.setState(

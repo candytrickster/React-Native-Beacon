@@ -29,7 +29,7 @@ class Grass extends Component{
   }
 
   render() {
-    const barStyles = {
+    const capitolStyles = {
       height: 200,
       width: 225,
       top: this.yPosition
@@ -38,7 +38,7 @@ class Grass extends Component{
     return (
         <View>
           <Animated.Image
-            style={barStyles}
+            style={capitolStyles}
               source={require('../assets/images/index/capitol.png')}
           />
         </View>
