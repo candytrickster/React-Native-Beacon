@@ -40,9 +40,9 @@ class FunFact extends Component{
   componentDidMount() {
     this.getRandomFact(this.props.item);
     Animated.spring(this.state.topAnim, {
-        toValue: height(0),
-        tension: 10,
-        friction: 15
+        toValue: -300,
+        tension: 20,
+        friction: 5
       }).start();
   }
 
@@ -74,28 +74,38 @@ class FunFact extends Component{
 
   render() {
 
-    const container = {
-      flex: 1,
+    const animContainer = {
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#ffdf00',
       borderRadius: 20,
       width: width(100),
-      height: 200,
+      height: 100,
       top: this.state.topAnim
     };
 
     return (
-      <Animated.View style={container}>
-        <Text style={styles.title}>YOU FOUND IT!</Text>
-        <Text style={styles.didYouKnow}>Did you know?</Text>
-        <Text style={styles.funFact}>{this.state.funFact}</Text>
+      <Animated.View style={animContainer}>
+        <View style={styles.container}>
+          <Text style={styles.title}>YOU FOUND IT!</Text>
+          <Text style={styles.didYouKnow}>Did you know?</Text>
+          <Text style={styles.funFact}>{this.state.funFact}</Text>
+        </View>
       </Animated.View>
     );
   }
 }
 
 var styles = StyleSheet.create({
+  container: {
+    // flex: 1,
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    // backgroundColor: '#ffdf00',
+    // borderRadius: 20,
+    // width: width(100),
+    // height: 200,
+  },
   title: {
 
   },
