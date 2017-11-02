@@ -23,6 +23,9 @@ class GridScreen extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.handler = this._flip.bind(this,'','','');
+
     this.state = {
       numFound: 0,
       currentItem: {
@@ -67,7 +70,7 @@ class GridScreen extends React.Component {
 
   componentDidMount() {
     this.interval = setInterval(() => {
-        this._found('isolator');
+        this._found('bell');
     },2000);
   }
 
@@ -166,14 +169,15 @@ class GridScreen extends React.Component {
             address={this.state.currentItem.address}
           />
         </ScrollView>
-        <Hint hint={this.state.currentItem.hint}/>
+        
         {this.state.currentItem.found ? 
           <FunFact
             item={this.state.currentItem.name}
             value={height(50)}
             delay={1000}
+            action= {this.handler}
           /> :
-          <Text></Text>
+          <Hint hint={this.state.currentItem.hint}/>
         }
       </Image>
     );

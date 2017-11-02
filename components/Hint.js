@@ -47,7 +47,7 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingBottom: 20,
-    left: 130
+    left: 130,
   },
   hintButton: {
     backgroundColor: '#ffdf00',

@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Animated, Image, Easing} from 'react-native';
 import { width, height, totalSize } from 'react-native-dimension';
+import { Button } from 'react-native-elements';
 
 const funFacts = {
   'isolator': {
     1:'isolator - first fun fact short',
     2:'isolator - second fun fact medium. i want to show the different lengths a fun fact could be.',
-    3:'isolator - third fun fact super long. This one is going to be a very super really long fun fact. its gonna show what a really long fun face would look like. So.. yeah. this is what said super long fun fact look likes.'
+    3:'isolator - third fun fact super long. This one is going to be a very super really long fun fact. its gonna show what a really long fun fact would look like. So.. yeah. this is what said super long fun fact look likes.'
   },
   'bell': {
     1:'bell - first fun fact short',
@@ -37,10 +38,18 @@ class FunFact extends Component{
     };
   }
 
+  async componentWillMount() {
+    await Expo.Font.loadAsync({
+      titlewave: require("../assets/fonts/Title-Wave-Regular.ttf"),
+      playfair: require("../assets/fonts/Playfair.ttf"),
+      avenir: require("../assets/fonts/Avenir.otf")
+    });
+  }
+
   componentDidMount() {
     this.getRandomFact(this.props.item);
     Animated.spring(this.state.topAnim, {
-        toValue: -300,
+        toValue: -190,
         tension: 20,
         friction: 5
       }).start();
@@ -52,14 +61,30 @@ class FunFact extends Component{
         this.setState(
           (prevState) => ({
             funFact: funFacts.isolator[this.getRandomNum()]
+            // funFact: funFacts.isolator[3]
           })
         );
         break;
-      case 'bell':
+      case 'Liberty Bell':
+        this.setState(
+          (prevState) => ({
+            funFact: funFacts.bell[this.getRandomNum()]
+          })
+        );
         break;
-      case 'walker':
+      case 'Olene Walker':
+        this.setState(
+          (prevState) => ({
+            funFact: funFacts.walker[this.getRandomNum()]
+          })
+        );
         break;
-      case 'supremeCourt':
+      case 'Supreme Court':
+        this.setState(
+          (prevState) => ({
+            funFact: funFacts.supremeCourt[this.getRandomNum()]
+          })
+        );
         break;
     }
   }
@@ -75,12 +100,8 @@ class FunFact extends Component{
   render() {
 
     const animContainer = {
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#ffdf00',
-      borderRadius: 20,
+      flex: 1,
       width: width(100),
-      height: 100,
       top: this.state.topAnim
     };
 
@@ -90,6 +111,15 @@ class FunFact extends Component{
           <Text style={styles.title}>YOU FOUND IT!</Text>
           <Text style={styles.didYouKnow}>Did you know?</Text>
           <Text style={styles.funFact}>{this.state.funFact}</Text>
+          <Button
+            raised
+            icon={{name: 'close', size: 16, color:'#fff'}}
+            buttonStyle={styles.playButton}
+            textStyle={styles.buttonText}
+            fontSize={15}
+            title={`Neat!`}
+            onPress={this.props.action}
+          />
         </View>
       </Animated.View>
     );
@@ -99,22 +129,44 @@ class FunFact extends Component{
 var styles = StyleSheet.create({
   container: {
     // flex: 1,
-    // alignItems: 'center',
+    alignItems: 'center',
     // justifyContent: 'center',
-    // backgroundColor: '#ffdf00',
-    // borderRadius: 20,
+    backgroundColor: '#ffdf00',
+    borderRadius: 20,
     // width: width(100),
-    // height: 200,
+    height: 400,
+    borderWidth: 4,
+    borderColor: '#ffc700'
   },
   title: {
-
+    fontFamily: 'avenir',
+    fontSize: 30,
+    paddingTop: 15,
+    textDecorationLine: 'underline'
   },
   didYouKnow: {
-
+    fontFamily: 'avenir',
+    fontSize: 22,
+    paddingTop: 15,
   },
   funFact: {
-
-  }
+    fontFamily: 'avenir',
+    fontSize: 16,
+    padding: 15,
+    textAlign: 'center'
+  },
+  playButton: {
+    backgroundColor: '#000',
+    borderRadius: 20,
+    width:100,
+    top: -10,
+    left: width(35)
+  },
+  buttonText: {
+    textAlign: 'center',
+    fontFamily: 'avenir',
+    color:"#fff"
+  },
 });
 
 export default FunFact;
