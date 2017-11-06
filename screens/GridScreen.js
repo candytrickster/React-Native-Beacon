@@ -71,9 +71,9 @@ class GridScreen extends React.Component {
   }
 
   componentDidMount() {
-    this.interval = setInterval(() => {
-        this._found('isolator');
-    },500);
+    // this.interval = setInterval(() => {
+    //     this._found('isolator');
+    // },500);
   }
 
   static navigationOptions = {

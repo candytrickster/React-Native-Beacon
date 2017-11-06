@@ -1,11 +1,24 @@
 import React from 'react';
-import { AppRegistry, Text, View, Image, Button, StyleSheet } from 'react-native';
+import { AppRegistry, Text, View, Image, StyleSheet } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { width, height, totalSize } from 'react-native-dimension';
 import Hr from 'react-native-hr';
+import { Button } from 'react-native-elements';
+import FBSDK from 'react-native-fbsdk';
+const {
+  ShareDialog,
+} = FBSDK;
+
 
 import FadeIn from '../components/FadeIn';
 import Capitol from '../components/Capitol';
+
+
+const shareLinkContent = {
+  contentType: 'link',
+  contentUrl: "https://facebook.com",
+  contentDescription: 'Wow, check out this great site!',
+};
 
 
 class EndScreen extends React.Component {
@@ -38,19 +51,18 @@ class EndScreen extends React.Component {
     return (
       <View>
         <FadeIn delay={500} duration={1500} style={{justifyContent: 'center', alignItems: 'center', zIndex: 9999}}>
-              <Text>CONGRATS!</Text>
-              <Text>You found {this.props.numFound} out of {this.props.max}</Text>
-              <Capitol value={height(0)+260} delay={500}/>
-              <Button
-                raised
-                iconRight={{name: 'play-arrow', size: 32, color:'#000'}}
-                buttonStyle={styles.playButton}
-                textStyle={styles.buttonText}
-                fontSize={32}
-                title={`PLAY`}
-                onPress={() => navigate('Grid')}
-              />
-              </FadeIn>
+          <Text>CONGRATS!</Text>
+          <Text>You found {this.props.numFound} out of {this.props.max}</Text>
+          <Button
+            raised
+            iconRight={{name: 'play-arrow', size: 32, color:'#000'}}
+            buttonStyle={styles.playButton}
+            textStyle={styles.buttonText}
+            fontSize={32}
+            title={`PLAY`}
+            onPress={() => (console.log('pushed'))}
+          />
+        </FadeIn>
       </View>
     );
   }
