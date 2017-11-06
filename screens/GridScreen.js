@@ -10,6 +10,8 @@ import { width, height, totalSize } from 'react-native-dimension';
 
 // import beaconList from '../assets/data/beacons.js';
 
+import EndScreen from '../screens/EndScreen.js';
+
 import StatusBar from '../components/StatusBar';
 import Beacon from '../components/Beacon';
 import Header from '../components/Header';
@@ -71,7 +73,7 @@ class GridScreen extends React.Component {
   componentDidMount() {
     this.interval = setInterval(() => {
         this._found('isolator');
-    },2000);
+    },500);
   }
 
   static navigationOptions = {
@@ -95,56 +97,61 @@ class GridScreen extends React.Component {
   }
 
   _renderAll = () => {
+
+    const { navigate } = this.props.navigation;
+
     return (
       <Image source={require('../assets/images/bg.png')} style={styles.container}>
         <Header/>
         <ScrollView>
-          <Text style={styles.title}>Found {this.state.numFound} of {maxItems}</Text>
           {(this.state.numFound >= maxItems) ? (
-            <Text>Yay you found all the items!</Text>
+            <EndScreen/>
           ): (
-            <Grid>
-              <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
-                <Row>
-                  {(this.state.isolator.found) ? (
-                    <Beacon name={this.state.isolator.name} found={this.state.isolator.found} image='isolator'/>
-                  ) : (
-                    <TouchableOpacity onPress={this._flip.bind(this,'isolator','this is the isolator clue','this is the isolator hint. Im just making this really really long to see what this will look like. oh long hint, how many pepople will read you? Not many. You are purely for looks..')}>
+            <View>
+              <Text style={styles.title}>Found {this.state.numFound} of {maxItems}</Text>
+              <Grid>
+                <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
+                  <Row>
+                    {(this.state.isolator.found) ? (
                       <Beacon name={this.state.isolator.name} found={this.state.isolator.found} image='isolator'/>
-                    </TouchableOpacity>
-                  )}
-                </Row>
-                <Row>
-                  {(this.state.bell.found) ? (
-                    <Beacon name={this.state.bell.name} found={this.state.bell.found} image='bell'/>
-                  ) : (
-                    <TouchableOpacity onPress={this._flip.bind(this,'bell','this is the bell clue','this is the bell hint')}>
+                    ) : (
+                      <TouchableOpacity onPress={this._flip.bind(this,'isolator','this is the isolator clue. Also a bit long','this is the isolator hint. Im just making this really really long to see what this will look like. oh long hint, how many pepople will read you? Not many. You are purely for looks..')}>
+                        <Beacon name={this.state.isolator.name} found={this.state.isolator.found} image='isolator'/>
+                      </TouchableOpacity>
+                    )}
+                  </Row>
+                  <Row>
+                    {(this.state.bell.found) ? (
                       <Beacon name={this.state.bell.name} found={this.state.bell.found} image='bell'/>
-                    </TouchableOpacity>
-                  )}
-                </Row>
-              </Col>
-              <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
-                <Row>
-                  {(this.state.walker.found) ? (
-                    <Beacon name={this.state.walker.name} found={this.state.walker.found} image='walker'/>
-                  ) : (
-                    <TouchableOpacity onPress={this._flip.bind(this,'walker','this is the walker clue','this is the walker hint')}>
+                    ) : (
+                      <TouchableOpacity onPress={this._flip.bind(this,'bell','this is the bell clue','this is the bell hint')}>
+                        <Beacon name={this.state.bell.name} found={this.state.bell.found} image='bell'/>
+                      </TouchableOpacity>
+                    )}
+                  </Row>
+                </Col>
+                <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
+                  <Row>
+                    {(this.state.walker.found) ? (
                       <Beacon name={this.state.walker.name} found={this.state.walker.found} image='walker'/>
-                    </TouchableOpacity>
-                  )}
-                </Row>
-                <Row>
-                  {(this.state.supremeCourt.found) ? (
-                    <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} image='supremeCourt'/>
-                  ) : (
-                    <TouchableOpacity onPress={this._flip.bind(this,'supremeCourt','this is the supremeCourt clue','this is the supremeCourt hint')}>
+                    ) : (
+                      <TouchableOpacity onPress={this._flip.bind(this,'walker','this is the walker clue','this is the walker hint')}>
+                        <Beacon name={this.state.walker.name} found={this.state.walker.found} image='walker'/>
+                      </TouchableOpacity>
+                    )}
+                  </Row>
+                  <Row>
+                    {(this.state.supremeCourt.found) ? (
                       <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} image='supremeCourt'/>
-                    </TouchableOpacity>
-                  )}
-                </Row>
-              </Col>
-            </Grid>
+                    ) : (
+                      <TouchableOpacity onPress={this._flip.bind(this,'supremeCourt','this is the supremeCourt clue','this is the supremeCourt hint')}>
+                        <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} image='supremeCourt'/>
+                      </TouchableOpacity>
+                    )}
+                  </Row>
+                </Col>
+              </Grid>
+            </View>
           )}
 
         </ScrollView>

@@ -60,8 +60,8 @@ class FunFact extends Component{
       case 'Isolator':
         this.setState(
           (prevState) => ({
-            // funFact: funFacts.isolator[this.getRandomNum()]
-            funFact: funFacts.isolator[3]
+            funFact: funFacts.isolator[this.getRandomNum()]
+            // funFact: funFacts.isolator[3]
           })
         );
         break;
@@ -108,7 +108,7 @@ class FunFact extends Component{
     return (
       <Animated.View style={animContainer}>
         <View style={styles.container}>
-          <Text style={styles.title}>YOU FOUND IT!</Text>
+          <Text style={styles.title}>It was the {this.props.item}!</Text>
           <Text style={styles.didYouKnow}>Did you know?</Text>
           <Text style={styles.funFact}>{this.state.funFact}</Text>
           <Button

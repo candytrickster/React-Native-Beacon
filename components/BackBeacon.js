@@ -83,7 +83,7 @@ class BackBeacon extends Component{
 
     return (
       <View style={styles.viewContainer}>
-        <Text style={styles.title}>{(this.props.found) ? this.props.name : '???'}</Text>
+        <Text style={styles.title}>{(this.props.found) ? 'YOU FOUND IT!' : this.props.clue}</Text>
         <Image source={require('../assets/images/grid-items/gridItemBg.png')} style={styles.container}>
           <Image source={images[imageIndex]} style={styles.beaconItem}>
             
