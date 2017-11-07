@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppRegistry, Text, View, Image, StyleSheet } from 'react-native';
+import { AppRegistry, Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { width, height, totalSize } from 'react-native-dimension';
 import Hr from 'react-native-hr';
@@ -44,24 +44,29 @@ class EndScreen extends React.Component {
 
   static navigationOptions = {
     title: 'End yo!',
-  };
+  }
+
+
+  share = () => {
+    console.log('pressed fb button');
+  }
   
   // do we want to do a msg depending on how many found? ex. all 10 = 'congrats!', 5 = 'better luck next time', etc...
   render() {
     return (
       <View>
         <FadeIn delay={500} duration={1500} style={{justifyContent: 'center', alignItems: 'center', zIndex: 9999}}>
-          <Text>CONGRATS!</Text>
-          <Text>You found {this.props.numFound} out of {this.props.max}</Text>
-          <Button
-            raised
-            iconRight={{name: 'play-arrow', size: 32, color:'#000'}}
-            buttonStyle={styles.playButton}
-            textStyle={styles.buttonText}
-            fontSize={32}
-            title={`PLAY`}
-            onPress={() => (console.log('pushed'))}
-          />
+          <Text style={styles.title}>CONGRATS!</Text>
+          <Text style={styles.foundText}>You found {this.props.numFound} out of {this.props.max}</Text>
+          <Image source={require('../assets/images/grid-items/gridItemBg.png')} style={styles.beaconContainer}>
+            <Image source={require('../assets/images/white-capitol.png')} style={styles.beaconItem}/>
+          </Image>
+          <View style={styles.fbIconContainer}>
+            <Text style={styles.shareText}>Share your score on </Text>
+            <TouchableOpacity onPress={this.share}>
+              <Image style={styles.fbIcon} source={require('../assets/images/fb-icon.png')}/>
+            </TouchableOpacity>
+          </View>
         </FadeIn>
       </View>
     );
@@ -77,28 +82,48 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  playButton: {
-    backgroundColor: '#ffdf00',
-    borderRadius: 20,
-    width:270,
-    top: height(65)
-  },
-  buttonText: {
-    textAlign: 'center',
-    fontFamily: 'titlewave',
-    color:"#000"
-  },
-  capitolText: {
+  title: {
     fontFamily: 'playfair',
     color: 'white',
-    fontSize:36,
+    fontSize:48,
     top: height(4)
   },
-  scavengerText: {
+  foundText: {
     fontFamily: 'avenir',
     color: 'white',
-    fontSize:38,
+    fontSize:32,
     top: height(7)
+  },
+  beaconContainer: {
+    flex: 1,
+    top: height(10),
+    width: width(75),
+    height: height(50),
+    backgroundColor:'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  beaconItem: {
+    width: 200,
+    height: 180,
+    top: -23
+  },
+  fbIconContainer: {
+    top: height(10),
+    flex: 1, 
+    flexDirection: 'row', 
+    justifyContent: 'flex-end',
+    top: height(15)
+  },
+  fbIcon: {
+    width: 40,
+    height: 40
+  },
+  shareText: {
+    fontFamily: 'avenir',
+    color: 'white',
+    fontSize:32,
+    paddingTop: 5
   }
 
 });

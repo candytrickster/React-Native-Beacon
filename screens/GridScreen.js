@@ -29,7 +29,7 @@ class GridScreen extends React.Component {
     this.handler = this._flip.bind(this,'','','');
 
     this.state = {
-      numFound: 0,
+      numFound: 10,
       currentItem: {
         name: 'currentItem',
         found: false,
@@ -105,7 +105,7 @@ class GridScreen extends React.Component {
         <Header/>
         <ScrollView>
           {(this.state.numFound >= maxItems) ? (
-            <EndScreen/>
+            <EndScreen numFound={this.state.numFound} max={maxItems}/>
           ): (
             <View>
               <Text style={styles.title}>Found {this.state.numFound} of {maxItems}</Text>
