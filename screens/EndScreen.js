@@ -9,10 +9,8 @@ const {
   ShareDialog,
 } = FBSDK;
 
-
 import FadeIn from '../components/FadeIn';
 import Capitol from '../components/Capitol';
-
 
 const shareLinkContent = {
   contentType: 'link',
@@ -20,9 +18,8 @@ const shareLinkContent = {
   contentDescription: 'Wow, check out this great site!',
 };
 
-
 class EndScreen extends React.Component {
-  
+
   constructor(props) {
     super(props);
 
@@ -45,7 +42,6 @@ class EndScreen extends React.Component {
   static navigationOptions = {
     title: 'End yo!',
   }
-
 
   share = () => {
     console.log('pressed fb button');
