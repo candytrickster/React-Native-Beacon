@@ -82,17 +82,17 @@ const styles = StyleSheet.create({
     fontFamily: 'playfair',
     color: 'white',
     fontSize:48,
-    top: height(4)
+    top: height(2)
   },
   foundText: {
     fontFamily: 'avenir',
     color: 'white',
     fontSize:32,
-    top: height(7)
+    top: height(4)
   },
   beaconContainer: {
     flex: 1,
-    top: height(10),
+    top: height(6),
     width: width(75),
     height: height(50),
     backgroundColor:'transparent',
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     top: -23
   },
   fbIconContainer: {
-    top: height(10),
+    top: height(14),
     flex: 1, 
     flexDirection: 'row', 
     justifyContent: 'flex-end',

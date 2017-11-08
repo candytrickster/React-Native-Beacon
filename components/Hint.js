@@ -14,6 +14,16 @@ class Hint extends Component{
       order: 1
     };
   }
+
+  async componentWillMount() {
+    await Expo.Font.loadAsync({
+      titlewave: require("../assets/fonts/Title-Wave-Regular.ttf"),
+      playfair: require("../assets/fonts/Playfair.ttf"),
+      avenir: require("../assets/fonts/Avenir.otf")
+    });
+
+    this.setState({ isReady: true });
+  }
   
   render() {
     return (
@@ -34,7 +44,9 @@ class Hint extends Component{
           ]}
           animationType='spring' // spring-damper animation
           springConfig={{tension: 100, friction: 0}} // tension controls the potential of the spring effect,
-                                                     // friction controls the damper effect
+          
+          labelContainerStyle={{backgroundColor: '#ffdf00', alignItems: 'center', borderColor: '#ffc700', borderWidth: 3}}
+          labelSeparatorColor='#ffdf00'
           />
       </View>
     );
