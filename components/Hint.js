@@ -44,8 +44,8 @@ class Hint extends Component{
           ]}
           animationType='spring' // spring-damper animation
           springConfig={{tension: 100, friction: 0}} // tension controls the potential of the spring effect,
-          
-          labelContainerStyle={{backgroundColor: '#ffdf00', alignItems: 'center', borderColor: '#ffc700', borderWidth: 3}}
+          labelStyle={{fontFamily: 'avenir', fontSize: 21, padding:10, paddingTop: 15}}
+          labelContainerStyle={{backgroundColor: '#ffdf00', alignItems: 'center'}}
           labelSeparatorColor='#ffdf00'
           />
       </View>
