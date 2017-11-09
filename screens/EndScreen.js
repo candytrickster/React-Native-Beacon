@@ -4,19 +4,14 @@ import { StackNavigator } from 'react-navigation';
 import { width, height, totalSize } from 'react-native-dimension';
 import Hr from 'react-native-hr';
 import { Button } from 'react-native-elements';
-import FBSDK from 'react-native-fbsdk';
-const {
-  ShareDialog,
-} = FBSDK;
 
 import FadeIn from '../components/FadeIn';
 import Capitol from '../components/Capitol';
 
-const shareLinkContent = {
-  contentType: 'link',
-  contentUrl: "https://facebook.com",
-  contentDescription: 'Wow, check out this great site!',
-};
+import {
+  shareOnFacebook,
+  shareOnTwitter,
+} from 'react-native-social-share';
 
 class EndScreen extends React.Component {
 
@@ -45,7 +40,17 @@ class EndScreen extends React.Component {
 
   share = () => {
     console.log('pressed fb button');
+    shareOnFacebook({
+        'text':'Testing!',
+        'link':'https://google.com/',
+        'image': '../assets/images/fb-test-photo.jpg',
+      },
+      (results) => {
+        console.log(results);
+      }
+    );
   }
+
   
   // do we want to do a msg depending on how many found? ex. all 10 = 'congrats!', 5 = 'better luck next time', etc...
   render() {

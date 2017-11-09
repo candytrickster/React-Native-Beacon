@@ -29,7 +29,7 @@ class GridScreen extends React.Component {
     this.handler = this._flip.bind(this,'','','');
 
     this.state = {
-      numFound: 0,
+      numFound: 10,
       currentItem: {
         name: 'currentItem',
         found: false,

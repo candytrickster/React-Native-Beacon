@@ -6,7 +6,6 @@ import Hr from 'react-native-hr';
 import { width, height, totalSize } from 'react-native-dimension';
 //screens
 import GridScreen from './screens/GridScreen';
-import SingleItemScreen from './screens/SingleItemScreen';
 import EndScreen from './screens/EndScreen';
 //components
 import Grass from './components/Grass';
@@ -130,7 +129,6 @@ const styles = StyleSheet.create({
 export default SimpleApp = StackNavigator({
   Home: { screen: HomeScreen },
   Grid: { screen: GridScreen },
-  SingleItem: { screen: SingleItemScreen },
   End: { screen: EndScreen }
 },{ 
   headerMode: 'none' 

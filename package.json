@@ -35,6 +35,7 @@
     "react-native-popup": "^0.6.1",
     "react-native-popup-dialog": "^0.9.35",
     "react-native-popup-menu": "^0.8.3",
+    "react-native-social-share": "^1.3.0",
     "react-navigation": "^1.0.0-beta.11"
   }
 }
