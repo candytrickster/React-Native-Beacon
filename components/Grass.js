@@ -7,7 +7,7 @@ class Grass extends Component{
   constructor(props) {
     super(props);
 
-    this.yPosition = new Animated.Value(height(100)+300);
+    this.yPosition = new Animated.Value(height(100)+width(72));
     this.state = {
       
     };
@@ -28,15 +28,15 @@ class Grass extends Component{
   }
 
   render() {
-    const barStyles = {
-      height: 280,
-      width: 375,
+    const grassStyle = {
+      height: width(72),
+      width: width(100),
       top: this.yPosition
     };
 
     return (
         <Animated.Image
-          style={barStyles}
+          style={grassStyle}
             source={require('../assets/images/index/grass.png')}
         />
     );

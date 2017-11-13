@@ -64,8 +64,8 @@ var styles = StyleSheet.create({
   hintButton: {
     backgroundColor: '#ffdf00',
     borderRadius: 20,
-    width: 80,
-    height: 50,
+    width: width(23),
+    height: width(12),
   },
   buttonText: {
     textAlign: 'center',

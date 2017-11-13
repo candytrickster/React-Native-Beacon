@@ -90,8 +90,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   beaconItem: {
-    width: 200,
-    height: 180,
+    width: width(52),
+    height: width(48),
     top: -23
   },
   fbIconContainer: {

@@ -7,7 +7,7 @@ class Grass extends Component{
   constructor(props) {
     super(props);
 
-    this.yPosition = new Animated.Value(height(100)+250);
+    this.yPosition = new Animated.Value(height(100)+(height(100)/3));
     this.state = {
       
     };
@@ -30,8 +30,8 @@ class Grass extends Component{
 
   render() {
     const capitolStyles = {
-      height: 200,
-      width: 225,
+      height: (height(100)/3),
+      width: width(65),
       top: this.yPosition
     };
 

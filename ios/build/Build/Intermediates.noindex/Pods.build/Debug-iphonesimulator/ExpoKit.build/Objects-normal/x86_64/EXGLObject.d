@@ -1,0 +1,6 @@
+dependencies: \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Api/GL/EXGLObject.m \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/Target\ Support\ Files/ExpoKit/ExpoKit-prefix.pch \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Api/GL/EXGLObject.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/cpp/UEXGL.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Api/GL/EXGLGPUImageObject.h

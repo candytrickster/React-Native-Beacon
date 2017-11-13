@@ -48,11 +48,6 @@ class HomeScreen extends React.Component {
 
   render() {
 
-    const barStyles = {
-      height: 200,
-      width: 225,
-      top: this.yPosition
-    };
     if(this.state.isReady) {
       const { navigate } = this.props.navigation;
 
@@ -73,8 +68,8 @@ class HomeScreen extends React.Component {
                 onPress={() => navigate('Grid')}
               />
             </FadeIn>
-            <Grass value={height(100)-450} delay={0}/>
-            <Capitol value={height(0)-260} delay={1000}/>
+            <Grass value={height(100)-(width(72)*1.55)} delay={0}/>
+            <Capitol value={height(0)-((height(100)/3)+height(2.5))} delay={1000}/>
 
           </View>
         </Image>
@@ -102,7 +97,7 @@ const styles = StyleSheet.create({
   playButton: {
     backgroundColor: '#ffdf00',
     borderRadius: 20,
-    width:270,
+    width:width(68),
     top: height(65)
   },
   buttonText: {

@@ -89,15 +89,15 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    width: 130,
-    height: 150,
+    width: width(35),
+    height: width(40),
     backgroundColor:'transparent',
     justifyContent: 'center',
     alignItems: 'center',
   },
   beaconItem: {
-    width: 100,
-    height: 80,
+    width: width(25),
+    height: width(20),
     resizeMode: 'contain',
     justifyContent: 'center',
     alignItems: 'center'

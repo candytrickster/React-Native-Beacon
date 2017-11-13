@@ -29,7 +29,7 @@ class GridScreen extends React.Component {
     this.handler = this._flip.bind(this,'','','');
 
     this.state = {
-      numFound: 0,
+      numFound: 10,
       currentItem: {
         name: 'currentItem',
         found: false,
@@ -73,7 +73,7 @@ class GridScreen extends React.Component {
   componentDidMount() {
     // this.interval = setInterval(() => {
     //     this._found('isolator');
-    // },1500);
+    // },2000);
   }
 
   static navigationOptions = {
@@ -110,7 +110,7 @@ class GridScreen extends React.Component {
             <View>
               <Text style={styles.title}>Found {this.state.numFound} of {maxItems}</Text>
               <Grid>
-                <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
+                <Col style={{ width: width(50), justifyContent: 'center', alignItems: 'center' }}>
                   <Row>
                     {(this.state.isolator.found) ? (
                       <Beacon name={this.state.isolator.name} found={this.state.isolator.found} image='isolator'/>
@@ -130,7 +130,7 @@ class GridScreen extends React.Component {
                     )}
                   </Row>
                 </Col>
-                <Col style={{ width: 170, justifyContent: 'center', alignItems: 'center' }}>
+                <Col style={{ width: width(50), justifyContent: 'center', alignItems: 'center' }}>
                   <Row>
                     {(this.state.walker.found) ? (
                       <Beacon name={this.state.walker.name} found={this.state.walker.found} image='walker'/>

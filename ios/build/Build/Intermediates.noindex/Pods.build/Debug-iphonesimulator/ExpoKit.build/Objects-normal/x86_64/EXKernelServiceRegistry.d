@@ -1,0 +1,40 @@
+dependencies: \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Kernel/Core/EXKernelServiceRegistry.m \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/Target\ Support\ Files/ExpoKit/ExpoKit-prefix.pch \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Kernel/Core/EXKernelServiceRegistry.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Kernel/Core/EXKernelBridgeRegistry.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Kernel/Core/EXKernelBridgeRecord.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Kernel/Services/EXBranchManager.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Kernel/Services/EXKernelService.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Kernel/Services/EXErrorRecoveryManager.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Api/EXErrorRecovery.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/ScopedModule/EXScopedBridgeModule.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Internal/EXScopedModuleRegistry.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Kernel/Services/EXGoogleAuthManager.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Api/EXGoogle.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Kernel/Services/EXKernelLinkingManager.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Internal/EXLinkingManager.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/ScopedModule/EXScopedEventEmitter.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/node_modules/react-native/React/Modules/RCTEventEmitter.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/ReactAppManager/EXReactAppManager.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Api/EXCachedResource.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Api/EXUtil.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Kernel/Services/EXKernelModuleManager.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Internal/EXKernelModule.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Kernel/Services/EXRemoteNotificationManager.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Api/EXNotifications.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Kernel/Services/EXScreenOrientationManager.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Api/EXScreenOrientation.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Kernel/Services/EXSensorManager.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Api/EXAccelerometer.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Api/EXDeviceMotion.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Api/EXGyroscope.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Api/EXMagnetometer.h \
+  /Users/traciewamsley/Documents/experiments/react-native/React-Native-Beacon/ios/Pods/ExpoKit/ios/Exponent/Versioned/Modules/Api/EXMagnetometerUncalibrated.h

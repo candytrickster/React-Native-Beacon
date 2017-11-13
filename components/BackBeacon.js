@@ -110,8 +110,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   beaconItem: {
-    width: 200,
-    height: 180,
+    width: width(60),
+    height: width(45),
     resizeMode: 'contain',
     justifyContent: 'center',
     alignItems: 'center'
