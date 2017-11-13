@@ -40,15 +40,6 @@ class EndScreen extends React.Component {
 
   share = () => {
     console.log('pressed fb button');
-    shareOnFacebook({
-        'text':'Testing!',
-        'link':'https://google.com/',
-        'image': '../assets/images/fb-test-photo.jpg',
-      },
-      (results) => {
-        console.log(results);
-      }
-    );
   }
 
   
@@ -62,12 +53,6 @@ class EndScreen extends React.Component {
           <Image source={require('../assets/images/grid-items/gridItemBg.png')} style={styles.beaconContainer}>
             <Image source={require('../assets/images/white-capitol.png')} style={styles.beaconItem}/>
           </Image>
-          <View style={styles.fbIconContainer}>
-            <Text style={styles.shareText}>Share your score on </Text>
-            <TouchableOpacity onPress={this.share}>
-              <Image style={styles.fbIcon} source={require('../assets/images/fb-icon.png')}/>
-            </TouchableOpacity>
-          </View>
         </FadeIn>
       </View>
     );
