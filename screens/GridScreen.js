@@ -30,6 +30,7 @@ class GridScreen extends React.Component {
 
     this.state = {
       numFound: 0,
+      finished: false,
       currentItem: {
         name: 'currentItem',
         found: false,
@@ -102,9 +103,13 @@ class GridScreen extends React.Component {
 
     return (
       <Image source={require('../assets/images/bg.png')} style={styles.container}>
-        <Header/>
+        <Header type='end'>
+          <TouchableOpacity onPress={this._finishGame}>
+            <Text style={{fontSize: 14, color: 'white', textAlign: 'center'}}>End Game</Text>
+          </TouchableOpacity>
+        </Header>
         <ScrollView>
-          {(this.state.numFound >= maxItems) ? (
+          {(this.state.finished) ? (
             <EndScreen numFound={this.state.numFound} max={maxItems}/>
           ): (
             <View>
@@ -162,7 +167,7 @@ class GridScreen extends React.Component {
   _renderIndividual = () => {
     return (
       <Image source={require('../assets/images/bg.png')} style={styles.container}>
-        <Header>
+        <Header type='back'>
           <TouchableOpacity onPress={this._flip.bind(this, '','','')}>
             <Text style={{fontSize: 12, color: 'white'}}>BACK</Text>
           </TouchableOpacity>
@@ -277,6 +282,12 @@ class GridScreen extends React.Component {
       numFound: this.state.numFound+1
     });
 
+    if(numFound >= maxItems){
+      this.setState({
+        finished: !this.state.finished
+      });
+    }
+
     switch(item) {
       case 'isolator':
         await this.setState(
@@ -349,6 +360,11 @@ class GridScreen extends React.Component {
     }
   }
 
+  _finishGame = () => {
+    this.setState({
+      finished: true
+    });
+  }
 
 
 }

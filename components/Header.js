@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet, Animated, Image, Easing } from 'react-native';
+import { View, Text, StyleSheet, Animated, Image, Easing, TouchableOpacity } from 'react-native';
 import { width, height, totalSize } from 'react-native-dimension';
 import Hr from 'react-native-hr';
 import Expo from 'expo';
+import DeviceInfo from 'react-native-device-info';
 
 class Header extends Component{
   
@@ -32,25 +33,30 @@ class Header extends Component{
 
   render() {
 
+    const isSE = (DeviceInfo.getModel() == 'iPhone SE') ? true : false;
+    const isX = (DeviceInfo.getModel() == 'iPhone X') ? true : false;
+
+    const btnStyle = (this.props.type == 'back') ? styles.backButton : styles.endButton;
+
     return (
-    	<View style={styles.container}>
-        {this.props.children ? 
-          <View>
-            <View style={styles.backButton}>
-              {this.props.children}
-            </View>
-            <View style={styles.containerWithButtons}><Text style={styles.capitolTextWithButtons}>UTAH CAPITOL</Text>
-              <Hr lineStyle={{ backgroundColor: "white", top:-17, marginLeft: 75, marginRight: 75}}/>
-              <Text style={styles.scavengerTextWithButtons}>SCAVENGER HUNT</Text>
-            </View>
-          </View> 
-        :
-          <View style={styles.container}><Text style={styles.capitolText}>UTAH CAPITOL</Text>
-            <Hr lineStyle={{ backgroundColor: "white", top:7, marginLeft: 75, marginRight: 75}}/>
-            <Text style={styles.scavengerText}>SCAVENGER HUNT</Text>
+      <View style={styles.container}>
+        <View>
+          <View style={btnStyle}>
+            {this.props.children}
           </View>
-        }
-    		
+          {
+            (this.props.type == 'end') ? 
+            <View style={styles.containerEndButton}><Text style={styles.capitolText}>UTAH CAPITOL</Text>
+              <Hr lineStyle={{ backgroundColor: "white", top:-17, marginLeft: 75, marginRight: 75}}/>
+              <Text style={styles.scavengerText}>SCAVENGER HUNT</Text>
+            </View>
+            :
+            <View style={styles.containerBackButton}><Text style={styles.capitolText}>UTAH CAPITOL</Text>
+              <Hr lineStyle={{ backgroundColor: "white", top:-17, marginLeft: 75, marginRight: 75}}/>
+              <Text style={styles.scavengerText}>SCAVENGER HUNT</Text>
+            </View>
+          }
+        </View>
       </View>
     );
   }
@@ -64,20 +70,21 @@ const styles = StyleSheet.create({
     height: 80,
     width: width(100)
   },
-  containerWithButtons:{
+  containerBackButton:{
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#002a5c',
     width: width(100),
     height: 10
   },
-  capitolText: {
-    fontFamily: 'playfair',
-    color: 'white',
-    fontSize:20,
-    top:5
+  containerEndButton:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: width(100),
+    height: 10,
+    top: -10
   },
-  capitolTextWithButtons: {
+  capitolText: {
     fontFamily: 'playfair',
     color: 'white',
     fontSize:20,
@@ -87,17 +94,15 @@ const styles = StyleSheet.create({
     fontFamily: 'avenir',
     color: 'white',
     fontSize:22,
-    top:12
-  },
-  scavengerTextWithButtons: {
-    fontFamily: 'avenir',
-    color: 'white',
-    fontSize:22,
     top:-12
   },
   backButton: {
     marginTop: height(5),
     paddingLeft: 15
+  },
+  endButton: {
+    marginTop: height(5),
+    paddingLeft: width(85),
   }
 
 });

@@ -60,7 +60,7 @@ class HomeScreen extends React.Component {
               { isSE ? <Text style={styles.seCapitolText}>UTAH CAPITOL</Text> : <Text style={styles.capitolText}>UTAH CAPITOL</Text> }
               
               <Hr lineStyle={{ backgroundColor: "white", height: 2, top:height(5) }}/>
-              <Text style={styles.scavengerText}>SCAVENGER HUNT</Text>
+              { isSE ? <Text style={styles.seScavengerText}>SCAVENGER HUNT</Text>: <Text style={styles.scavengerText}>SCAVENGER HUNT</Text> }
               <Button
                 raised
                 iconRight={{name: 'play-arrow', size: 32, color:'#000'}}
@@ -110,27 +110,27 @@ const styles = StyleSheet.create({
   },
   capitolText: {
     fontFamily: 'playfair',
-    color: 'white',
+    color: '#fff',
     fontSize:36,
     top: height(4)
   },
   scavengerText: {
     fontFamily: 'avenir',
-    color: 'white',
+    color: '#fff',
     fontSize:38,
     top: height(7)
   },
   //iphone se styling
   seCapitolText: {
     fontFamily: 'playfair',
-    color: 'orange',
-    fontSize:36,
+    color: '#fff',
+    fontSize:30,
     top: height(4)
   },
   seScavengerText: {
     fontFamily: 'avenir',
-    color: 'white',
-    fontSize:38,
+    color: '#fff',
+    fontSize:32,
     top: height(7)
   }
 
