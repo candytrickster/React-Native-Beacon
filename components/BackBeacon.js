@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Animated, Image, Easing } from 'react-native';
 import { width, height, totalSize } from 'react-native-dimension';
 
 import Expo from 'expo';
+import DeviceInfo from 'react-native-device-info';
 
 const images = [
   require('../assets/images/grid-items/isolator.png'),
@@ -62,6 +63,9 @@ class BackBeacon extends Component{
 
   render() {
 
+    const isSE = (DeviceInfo.getModel() == 'iPhone SE') ? true : false;
+    const isX = (DeviceInfo.getModel() == 'iPhone X') ? true : false;
+
     var imageIndex;
     switch(this.props.name){
       case 'Isolator':
@@ -83,7 +87,17 @@ class BackBeacon extends Component{
 
     return (
       <View style={styles.viewContainer}>
-        <Text style={styles.title}>{(this.props.found) ? 'YOU FOUND IT!' : this.props.clue}</Text>
+        {
+          isSE ? 
+            <Text style={styles.seTitle}>{(this.props.found) ? 'YOU FOUND IT!' : this.props.clue}</Text>
+            :
+            (
+              isX ? 
+                <Text style={styles.xTitle}>{(this.props.found) ? 'YOU FOUND IT!' : this.props.clue}</Text> 
+                : 
+                <Text style={styles.title}>{(this.props.found) ? 'YOU FOUND IT!' : this.props.clue}</Text>
+            )
+        }
         <Image source={require('../assets/images/grid-items/gridItemBg.png')} style={styles.container}>
           <Image source={images[imageIndex]} style={styles.beaconItem}>
             
@@ -120,6 +134,20 @@ const styles = StyleSheet.create({
     fontFamily: 'avenir',
     color: '#fff',
     fontSize: 40,
+    textAlign: 'center'
+  },
+  //for iphone SE
+  seTitle: {
+    fontFamily: 'avenir',
+    color: '#fff',
+    fontSize: 30,
+    textAlign: 'center'
+  },
+  //for iphone X
+  xTitle: {
+    fontFamily: 'avenir',
+    color: '#fff',
+    fontSize: 30,
     textAlign: 'center'
   }
 

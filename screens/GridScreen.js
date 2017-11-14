@@ -74,7 +74,7 @@ class GridScreen extends React.Component {
   componentDidMount() {
     // this.interval = setInterval(() => {
     //     this._found('isolator');
-    // },2000);
+    // },1000);
   }
 
   static navigationOptions = {
@@ -282,7 +282,7 @@ class GridScreen extends React.Component {
       numFound: this.state.numFound+1
     });
 
-    if(numFound >= maxItems){
+    if(this.state.numFound >= maxItems){
       this.setState({
         finished: !this.state.finished
       });
