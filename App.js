@@ -13,6 +13,7 @@ import Capitol from './components/Capitol';
 import FadeIn from './components/FadeIn';
 
 import Expo from 'expo';
+import DeviceInfo from 'react-native-device-info';
 
 const resizeMode = 'center';
 
@@ -37,16 +38,17 @@ class HomeScreen extends React.Component {
   }
 
   componentDidMount () {
-    
+    console.log("This is the device : " + DeviceInfo.getModel());
   }
 
   static navigationOptions = {
     title: 'Welcome',
   };
 
-
-
   render() {
+
+    const isSE = (DeviceInfo.getModel() == 'iPhone SE') ? true : false;
+    const isX = (DeviceInfo.getModel() == 'iPhone X') ? true : false;
 
     if(this.state.isReady) {
       const { navigate } = this.props.navigation;
@@ -55,7 +57,8 @@ class HomeScreen extends React.Component {
         <Image source={require('./assets/images/index/bg.png')} style={styles.container}>
           <View style={{justifyContent: 'center', alignItems: 'center', position: 'absolute'}}>
             <FadeIn delay={2300} duration={1500} style={{justifyContent: 'center', alignItems: 'center', zIndex: 9999}}>
-              <Text style={styles.capitolText}>UTAH CAPITOL</Text>
+              { isSE ? <Text style={styles.seCapitolText}>UTAH CAPITOL</Text> : <Text style={styles.capitolText}>UTAH CAPITOL</Text> }
+              
               <Hr lineStyle={{ backgroundColor: "white", height: 2, top:height(5) }}/>
               <Text style={styles.scavengerText}>SCAVENGER HUNT</Text>
               <Button
@@ -112,6 +115,19 @@ const styles = StyleSheet.create({
     top: height(4)
   },
   scavengerText: {
+    fontFamily: 'avenir',
+    color: 'white',
+    fontSize:38,
+    top: height(7)
+  },
+  //iphone se styling
+  seCapitolText: {
+    fontFamily: 'playfair',
+    color: 'orange',
+    fontSize:36,
+    top: height(4)
+  },
+  seScavengerText: {
     fontFamily: 'avenir',
     color: 'white',
     fontSize:38,

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1318D40791314B63A568D607 /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4406E509811C44839E1FD6BB /* libRNDeviceInfo.a */; };
+		A8BD95665BD64D8599AB25C0 /* libRNDeviceInfo-tvOS in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD40A6F2F104F95986C8D03 /* libRNDeviceInfo-tvOS */; };
 		B501732B1DC01252003445D9 /* EXShell.plist in Resources */ = {isa = PBXBuildFile; fileRef = B501732A1DC01252003445D9 /* EXShell.plist */; };
 		B56386491DB9693800A0598C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B56386481DB9693800A0598C /* AppDelegate.m */; };
 		B56386511DB9693800A0598C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B56386501DB9693800A0598C /* Assets.xcassets */; };
@@ -20,8 +22,27 @@
 		EBB8117C1BFA0514F79CAF74 /* libPods-utah-capitol-scavenger-hunt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A88D15726AD99E8A257BC7 /* libPods-utah-capitol-scavenger-hunt.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DC348C461FBB8301005FAC95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9125A2BD977641928CD7F5D0 /* RNDeviceInfo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DA5891D81BA9A9FC002B4DB2;
+			remoteInfo = RNDeviceInfo;
+		};
+		DC348C481FBB8301005FAC95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9125A2BD977641928CD7F5D0 /* RNDeviceInfo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E72EC1401F7ABB5A0001BC90;
+			remoteInfo = "RNDeviceInfo-tvOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2C1548D9E4CB1AEFA5CCAE6D /* Pods-utah-capitol-scavenger-hunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-utah-capitol-scavenger-hunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-utah-capitol-scavenger-hunt/Pods-utah-capitol-scavenger-hunt.debug.xcconfig"; sourceTree = "<group>"; };
+		4406E509811C44839E1FD6BB /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
+		9125A2BD977641928CD7F5D0 /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
 		A47FE4D7F70906B7DC8CE39B /* Pods-utah-capitol-scavenger-hunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-utah-capitol-scavenger-hunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-utah-capitol-scavenger-hunt/Pods-utah-capitol-scavenger-hunt.release.xcconfig"; sourceTree = "<group>"; };
 		B501732A1DC01252003445D9 /* EXShell.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EXShell.plist; sourceTree = "<group>"; };
 		B56386411DB9693800A0598C /* utah-capitol-scavenger-hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "utah-capitol-scavenger-hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +57,7 @@
 		B5CFBF4E1EDE419400B4BE24 /* EXBuildConstants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EXBuildConstants.plist; sourceTree = "<group>"; };
 		B5DB047E1F3A684600E91581 /* shell-app-manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "shell-app-manifest.json"; sourceTree = "<group>"; };
 		B5DB047F1F3A684600E91581 /* shell-app.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "shell-app.bundle"; sourceTree = "<group>"; };
+		BCD40A6F2F104F95986C8D03 /* libRNDeviceInfo-tvOS */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = text; path = "libRNDeviceInfo-tvOS"; sourceTree = "<group>"; };
 		C4A88D15726AD99E8A257BC7 /* libPods-utah-capitol-scavenger-hunt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-utah-capitol-scavenger-hunt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -45,12 +67,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBB8117C1BFA0514F79CAF74 /* libPods-utah-capitol-scavenger-hunt.a in Frameworks */,
+				1318D40791314B63A568D607 /* libRNDeviceInfo.a in Frameworks */,
+				A8BD95665BD64D8599AB25C0 /* libRNDeviceInfo-tvOS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B835E8893614439A10C7A82 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				9125A2BD977641928CD7F5D0 /* RNDeviceInfo.xcodeproj */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		1A42804E64B7E9E0AB8B6799 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +107,8 @@
 				B56386421DB9693800A0598C /* Products */,
 				5B29BC350A332C58878A9F13 /* Pods */,
 				1A42804E64B7E9E0AB8B6799 /* Frameworks */,
+				0B835E8893614439A10C7A82 /* Libraries */,
+				DC348C411FBB8301005FAC95 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +147,24 @@
 			path = Supporting;
 			sourceTree = "<group>";
 		};
+		DC348C411FBB8301005FAC95 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				4406E509811C44839E1FD6BB /* libRNDeviceInfo.a */,
+				BCD40A6F2F104F95986C8D03 /* libRNDeviceInfo-tvOS */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		DC348C421FBB8301005FAC95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC348C471FBB8301005FAC95 /* libRNDeviceInfo.a */,
+				DC348C491FBB8301005FAC95 /* libRNDeviceInfo-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,7 +195,7 @@
 		B56386391DB9693800A0598C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 900;
 				ORGANIZATIONNAME = "650 Industries, Inc.";
 				TargetAttributes = {
 					B56386401DB9693800A0598C = {
@@ -164,12 +216,35 @@
 			mainGroup = B56386381DB9693800A0598C;
 			productRefGroup = B56386421DB9693800A0598C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DC348C421FBB8301005FAC95 /* Products */;
+					ProjectRef = 9125A2BD977641928CD7F5D0 /* RNDeviceInfo.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B56386401DB9693800A0598C /* utah-capitol-scavenger-hunt */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DC348C471FBB8301005FAC95 /* libRNDeviceInfo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNDeviceInfo.a;
+			remoteRef = DC348C461FBB8301005FAC95 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DC348C491FBB8301005FAC95 /* libRNDeviceInfo-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNDeviceInfo-tvOS.a";
+			remoteRef = DC348C481FBB8301005FAC95 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B563863F1DB9693800A0598C /* Resources */ = {
@@ -392,6 +467,11 @@
 				DEVELOPMENT_TEAM = 92JTVHK4UG;
 				INFOPLIST_FILE = "$(SRCROOT)/utah-capitol-scavenger-hunt/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.utahinteractive.utahcapitolscavengerhunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -405,6 +485,11 @@
 				DEVELOPMENT_TEAM = 92JTVHK4UG;
 				INFOPLIST_FILE = "$(SRCROOT)/utah-capitol-scavenger-hunt/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.utahinteractive.utahcapitolscavengerhunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
