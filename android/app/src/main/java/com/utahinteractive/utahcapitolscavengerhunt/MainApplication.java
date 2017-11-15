@@ -9,6 +9,9 @@ import java.util.List;
 
 // Needed for `react-native link`
 // import com.facebook.react.ReactApplication;
+import com.mackentoch.beaconsandroid.BeaconsAndroidPackage;
+import com.barefootcoders.android.react.KDSocialShare.KDSocialShare;
+import com.mackentoch.beaconsandroid.BeaconsAndroidPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 
 public class MainApplication extends MultiDexApplication {
@@ -21,6 +24,9 @@ public class MainApplication extends MultiDexApplication {
 
         // Needed for `react-native link`
         // new MainReactPackage(),
+            new BeaconsAndroidPackage(),
+            new KDSocialShare(),
+            new BeaconsAndroidPackage(),
             new RNDeviceInfo()
     );
   }

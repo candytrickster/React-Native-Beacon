@@ -49,6 +49,9 @@ repositories{
 }
 
 dependencies {
+    compile project(':react-native-ibeacons')
+    compile project(':react-native-social-share')
+    compile project(':react-native-beacons-manager')
     compile project(':react-native-device-info')
   compile fileTree(dir: 'libs', include: ['*.jar'])
   testCompile 'junit:junit:4.12'
