@@ -6,39 +6,43 @@
 	<dict>
 		<key>AppIcon20x20@2x.png</key>
 		<data>
-		VKGJ7MybhW277yWQJlVzr2XiDuM=
+		CeCndXvkspVdeWCOOb2/PzsKzQQ=
 		</data>
 		<key>AppIcon20x20@3x.png</key>
 		<data>
-		K9BdT/9VAfX9FpyWXhSQjcxq6p8=
+		/eJWYMn94zOage2LvhTa5kRujX0=
+		</data>
+		<key>AppIcon29x29.png</key>
+		<data>
+		TgmikLZreEYhI1xNGRVc+2M5MII=
 		</data>
 		<key>AppIcon29x29@2x.png</key>
 		<data>
-		OIWoIDXpz3vpbpdPw0LC83nm9u0=
+		CVuS5EarGTeisqXCcr96JO/V5gk=
 		</data>
 		<key>AppIcon29x29@3x.png</key>
 		<data>
-		zwW+C5neJXNrHf5q7HycMcrCtF8=
+		PksOsD3lI2GVN2GPASojkIOFdSI=
 		</data>
 		<key>AppIcon40x40@2x.png</key>
 		<data>
-		yLpXBJPS2ikV9l64Cxm2Gbsm+sg=
+		XRCErMfClOd4SbJfpH++C+yZEuI=
 		</data>
 		<key>AppIcon40x40@3x.png</key>
 		<data>
-		NxZSgLm2gNsBCzbkdlBgjgxOvp0=
+		1nh9aFFLxwbcXNtOLlLBjSIPlGI=
 		</data>
 		<key>AppIcon60x60@2x.png</key>
 		<data>
-		NxZSgLm2gNsBCzbkdlBgjgxOvp0=
+		cNgCultKv1B65Qyr1wT4uzNMI10=
 		</data>
 		<key>AppIcon60x60@3x.png</key>
 		<data>
-		UyqacabDGbpi+xOUc0PLxpo8BxA=
+		2bJejl4X5FLol/OIjECZ0iPNv24=
 		</data>
 		<key>Assets.car</key>
 		<data>
-		zU2OBWlqClZ4n/+8lbBFvvcRvtg=
+		0+SeW4BTfTDZMFfIVEB7IXGRC3U=
 		</data>
 		<key>ComodoCaLimitedRsaCertificationAuthority.der</key>
 		<data>
@@ -54,7 +58,7 @@
 		</data>
 		<key>EXBuildConstants.plist</key>
 		<data>
-		5QXsEebvmvrWNgSgpPpgsLddUD8=
+		/JJEcR5qswlVUxDf69BOt3B+n20=
 		</data>
 		<key>EXSDKVersions.plist</key>
 		<data>
@@ -462,7 +466,7 @@
 		</dict>
 		<key>GTMOAuth2ViewTouch.nib</key>
 		<data>
-		WwuGxpOybN0tbrPue5Hs/YItd8o=
+		EUtPorlC8jYW+qcQsJ+Fs8yDTVw=
 		</data>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
 		<data>
@@ -1501,11 +1505,11 @@
 		</dict>
 		<key>Info.plist</key>
 		<data>
-		ouoaJFalsyFRbAwQzPxUqG6Jdsc=
+		BnYoipv6F8Dqo8IcZZbGCM87ODo=
 		</data>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		r5EUNflbsRXLtpr+50f10703o+s=
+		uf6MEaayEYZFMsmOO1SGK0PTp/8=
 		</data>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -1513,7 +1517,7 @@
 		</data>
 		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		qUJT0nvUscSkNS5fpvwdeNaLXD8=
+		xJI14N4FxyCKd1mvKINRe64K4hM=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -1562,99 +1566,110 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VKGJ7MybhW277yWQJlVzr2XiDuM=
+			CeCndXvkspVdeWCOOb2/PzsKzQQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			JXuoA4E4vmxDVpHsLIKBCqHzj3Hl/H42D9h9fOFQH4E=
+			m+amsIrYFejdGPCtE0l3za5cocD02yfXlBJ8Hp3tjmM=
 			</data>
 		</dict>
 		<key>AppIcon20x20@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			K9BdT/9VAfX9FpyWXhSQjcxq6p8=
+			/eJWYMn94zOage2LvhTa5kRujX0=
 			</data>
 			<key>hash2</key>
 			<data>
-			K8Blg4EbunLKxMIBEvbO8OINq7wmQwSwhlwMf3Nl1Fo=
+			m3/ntUAIGyrpZva4uhi4T4oXXl+dNXcqbUC5YPW+rrw=
+			</data>
+		</dict>
+		<key>AppIcon29x29.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TgmikLZreEYhI1xNGRVc+2M5MII=
+			</data>
+			<key>hash2</key>
+			<data>
+			6m45Mk//ZgHSKnJ0Aj4DK0h21U98nj+aMdq+h8ZfUmg=
 			</data>
 		</dict>
 		<key>AppIcon29x29@2x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			OIWoIDXpz3vpbpdPw0LC83nm9u0=
+			CVuS5EarGTeisqXCcr96JO/V5gk=
 			</data>
 			<key>hash2</key>
 			<data>
-			SXMdv5h0FXmErPyWAWW0Z492OVf8NztGl0WXWsMVrjs=
+			g2lCVGt/5GU1GWKp5NuJ0WpEsXf3D3wMiRYO6viNj+c=
 			</data>
 		</dict>
 		<key>AppIcon29x29@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zwW+C5neJXNrHf5q7HycMcrCtF8=
+			PksOsD3lI2GVN2GPASojkIOFdSI=
 			</data>
 			<key>hash2</key>
 			<data>
-			UuY9B1cMZXBzkHVkMewuswmtD17fwr8PNiDzKgut9Q0=
+			FekZxXWngtHHfiWCwyWZG86HWXXW6bm5Y1y3SFaptY8=
 			</data>
 		</dict>
 		<key>AppIcon40x40@2x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yLpXBJPS2ikV9l64Cxm2Gbsm+sg=
+			XRCErMfClOd4SbJfpH++C+yZEuI=
 			</data>
 			<key>hash2</key>
 			<data>
-			pZ0qyisuywZtoDmn03HZMlg+L3bXsuntoZr/WTMTwOU=
+			gS6p1FtLUyPmbQTUbZtqKHET+f/EFN1m2XuN7xHt3d4=
 			</data>
 		</dict>
 		<key>AppIcon40x40@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NxZSgLm2gNsBCzbkdlBgjgxOvp0=
+			1nh9aFFLxwbcXNtOLlLBjSIPlGI=
 			</data>
 			<key>hash2</key>
 			<data>
-			QqZiUVfJ/vmPPxWsc768amM+zsLjJoE9EjtUWDq0rRk=
+			AGFH+9OLaucwwO5GTXfEBml6QBt7vI6/RZFmBZ51fg8=
 			</data>
 		</dict>
 		<key>AppIcon60x60@2x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NxZSgLm2gNsBCzbkdlBgjgxOvp0=
+			cNgCultKv1B65Qyr1wT4uzNMI10=
 			</data>
 			<key>hash2</key>
 			<data>
-			QqZiUVfJ/vmPPxWsc768amM+zsLjJoE9EjtUWDq0rRk=
+			oSXKDa7o2TgrmmLTBPgx5rrd2nvBPCnSpbPvE6yFsm0=
 			</data>
 		</dict>
 		<key>AppIcon60x60@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UyqacabDGbpi+xOUc0PLxpo8BxA=
+			2bJejl4X5FLol/OIjECZ0iPNv24=
 			</data>
 			<key>hash2</key>
 			<data>
-			qjkp6kP0zm0Eu/v82f9g7NuOQ4DI72eUYgnmjASgNfA=
+			jzU0SAInFxo+7qQI6ntbOeDc32KZ4GY3OjOyM8WtpQQ=
 			</data>
 		</dict>
 		<key>Assets.car</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zU2OBWlqClZ4n/+8lbBFvvcRvtg=
+			0+SeW4BTfTDZMFfIVEB7IXGRC3U=
 			</data>
 			<key>hash2</key>
 			<data>
-			RbHILoXXxECDBkZQ+9SlLFn02yLiF3WHmCXMzeO7Tu8=
+			Hl1Ge9wxEHJjCI/isg4zVugXgBntOJfe8bgX58yQxwo=
 			</data>
 		</dict>
 		<key>ComodoCaLimitedRsaCertificationAuthority.der</key>
@@ -1694,11 +1709,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5QXsEebvmvrWNgSgpPpgsLddUD8=
+			/JJEcR5qswlVUxDf69BOt3B+n20=
 			</data>
 			<key>hash2</key>
 			<data>
-			K6IiUXrdiHRBTn7t3PU2XL5cQFWFvCH0nE+DlqY9ugA=
+			Xg67y6kwFBoVCC6/LBBFcFVGPaqhwCEovNlt3POVl6A=
 			</data>
 		</dict>
 		<key>EXSDKVersions.plist</key>
@@ -2299,11 +2314,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WwuGxpOybN0tbrPue5Hs/YItd8o=
+			EUtPorlC8jYW+qcQsJ+Fs8yDTVw=
 			</data>
 			<key>hash2</key>
 			<data>
-			+NIN8/jUCQiPjb4IIAZZPqrJxLN9/ljUKF+SoG+9Eu8=
+			8IZFQwWhS3vZTEx5Jtx3NFoL7gJnKRwUVzKmT9manw0=
 			</data>
 		</dict>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
@@ -4228,11 +4243,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			r5EUNflbsRXLtpr+50f10703o+s=
+			uf6MEaayEYZFMsmOO1SGK0PTp/8=
 			</data>
 			<key>hash2</key>
 			<data>
-			qsHoo2hotzVsQtfnxEx+Kp84BNvxR1cyBpQluX/9gPE=
+			aXwRT2QKC+v0Lrc1DeapCrYboGSwkpuyOD74hLGThrI=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/Info.plist</key>
@@ -4250,11 +4265,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qUJT0nvUscSkNS5fpvwdeNaLXD8=
+			xJI14N4FxyCKd1mvKINRe64K4hM=
 			</data>
 			<key>hash2</key>
 			<data>
-			Vn0UOHTV8kyF9i4YXrKqXvD4dvT+IvT5VQomfDLC8xA=
+			zLVusK0fxEzg/JXgnhSLPy1LTcqv1U/mQcVE6NC81RY=
 			</data>
 		</dict>
 		<key>api.amplitude.com.der</key>

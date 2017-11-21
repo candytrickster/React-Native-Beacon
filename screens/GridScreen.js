@@ -36,7 +36,8 @@ class GridScreen extends React.Component {
         found: false,
         clue: 'clue',
         hint: 'hint',
-        address: 'address'
+        address: 'address',
+        uuid: 'uuid'
       },
       isolator: {
         name: 'Isolator',
@@ -195,18 +196,12 @@ class GridScreen extends React.Component {
     );
   }
  
-   async _flip (item, clue, hint) {
+  async _flip (item, clue, hint) {
 
-    this.setState({
+    await this.setState({
       isFlipped: !this.state.isFlipped
     });
-    // await this.setState(
-    //       (prevState) => ({
-    //         isolator: Object.assign({}, prevState.isolator, {
-    //           found: true
-    //         })
-    //       })
-    //     );
+
     switch(item) {
       case 'isolator':
         await this.setState(
@@ -216,7 +211,8 @@ class GridScreen extends React.Component {
               name: this.state.isolator.name,
               clue: clue,
               hint: hint,
-              address: '0C:F3:EE:0D:A4:4C'
+              address: '0C:F3:EE:0D:A4:4C',
+              uuid: 'isolator new uuid'
             })
           })
         );
@@ -229,7 +225,8 @@ class GridScreen extends React.Component {
               name: this.state.bell.name,
               clue: clue,
               hint: hint,
-              address: '0C:F3:EE:0D:A4:4C'
+              address: '0C:F3:EE:0D:A4:4C',
+              uuid: 'bell new uuid'
             })
           })
         );
@@ -242,7 +239,8 @@ class GridScreen extends React.Component {
               name: this.state.walker.name,
               clue: clue,
               hint: hint,
-              address: '0C:F3:EE:0D:A4:4C'
+              address: '0C:F3:EE:0D:A4:4C',
+              uuid: 'new uuid'
             })
           })
         );
@@ -255,7 +253,8 @@ class GridScreen extends React.Component {
               name: this.state.senate.name,
               clue: clue,
               hint: hint,
-              address: '0C:F3:EE:0D:A4:4C'
+              address: '0C:F3:EE:0D:A4:4C',
+              uuid: 'new uuid'
             })
           })
         );
@@ -268,11 +267,15 @@ class GridScreen extends React.Component {
               name: this.state.supremeCourt.name,
               clue: clue,
               hint: hint,
-              address: '0C:F3:EE:0D:A4:4C'
+              address: '0C:F3:EE:0D:A4:4C',
+              uuid: 'new uuid'
             })
           })
         );
         break;
+    }
+    if(this.state.isFlipped) {
+      this._lookForBeacon(this.state.currentItem.uuid);
     }
   }
 
@@ -366,6 +369,9 @@ class GridScreen extends React.Component {
     });
   }
 
+  _lookForBeacon = (uuid) => {
+    console.log("Hello : "+uuid);
+  }
 
 }
 
