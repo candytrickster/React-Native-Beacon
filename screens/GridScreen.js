@@ -51,10 +51,6 @@ class GridScreen extends React.Component {
         name: 'Olene Walker',
         found: false
       },
-      senate: {
-        name: 'Senate Chamber',
-        found: false
-      },
       supremeCourt: {
         name: 'Supreme Court',
         found: false
@@ -292,7 +288,7 @@ class GridScreen extends React.Component {
     }
 
     switch(item) {
-      case 'isolator':
+      case 'Isolator':
         await this.setState(
           (prevState) => ({
             isolator: Object.assign({}, prevState.isolator, {
@@ -309,7 +305,7 @@ class GridScreen extends React.Component {
           })
         );
         break;
-      case 'bell':
+      case 'Liberty Bell':
         await this.setState(
           (prevState) => ({
             bell: Object.assign({}, prevState.bell, {
@@ -326,7 +322,7 @@ class GridScreen extends React.Component {
           })
         );
         break;
-      case 'walker':
+      case 'Olene Walker':
         await this.setState(
           (prevState) => ({
             walker: Object.assign({}, prevState.walker, {
@@ -343,7 +339,7 @@ class GridScreen extends React.Component {
           })
         );
         break;
-      case 'supremeCourt':
+      case 'Supreme Court':
         await this.setState(
           (prevState) => ({
             supremeCourt: Object.assign({}, prevState.supremeCourt, {
@@ -370,7 +366,13 @@ class GridScreen extends React.Component {
   }
 
   _lookForBeacon = (uuid) => {
-    console.log("Hello : "+uuid);
+    console.log("Hello "+this.state.currentItem.name+" : "+uuid);
+    // this._found(this.state.currentItem.name);
+    // OR
+    this.interval = setInterval(() => {
+        this._found(this.state.currentItem.name);
+    },1000);
+
   }
 
 }

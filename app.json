@@ -2,7 +2,7 @@
   "expo": {
     "name": "Utah Capitol Scavenger Hunt",
     "description": "",
-    "slug": "exp.host/@candytrickster/utah-capitol-scavenger-hunt",
+    "slug": "utah-capitol-scavenger-hunt",
     "sdkVersion": "21.0.0",
     "ios": {
       "bundleIdentifier": "com.utahinteractive.utahcapitolscavengerhunt",
