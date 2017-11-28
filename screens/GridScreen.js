@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button, Easing, TouchableOpacity, Animated, Image, StyleSheet, ScrollView } from 'react-native';
+import { Text, View, Button, Easing, TouchableOpacity, Animated, Image, StyleSheet, ScrollView, DeviceEventEmitter } from 'react-native';
 import {Grid, Col, Row} from 'react-native-easy-grid';
 import { StackNavigator } from 'react-navigation';
 import { MenuContext } from 'react-native-popup-menu';
@@ -7,6 +7,7 @@ import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-m
 import FlipView from 'react-native-flip-view';
 import Expo from 'expo';
 import { width, height, totalSize } from 'react-native-dimension';
+import Beacons from 'react-native-beacons-manager';
 
 // import beaconList from '../assets/data/beacons.js';
 
@@ -373,9 +374,32 @@ class GridScreen extends React.Component {
     console.log("Hello "+this.state.currentItem.name+" : "+uuid);
     // this._found(this.state.currentItem.name);
     // OR
-    this.interval = setInterval(() => {
-        this._found(this.state.currentItem.name);
-    },1000);
+    // this.interval = setInterval(() => {
+    //     this._found(this.state.currentItem.name);
+    // },1000);
+
+    const region = {
+      identifier: 'Estimotes',
+      uuid: uuid
+    };
+
+    const subscription = DeviceEventEmitter.addListener(
+      'beaconsDidRange',
+      (data) => {
+        // data.region - The current region
+        // data.region.identifier
+        // data.region.uuid
+     
+        // data.beacons - Array of all beacons inside a region
+        //  in the following structure:
+        //    .uuid
+        //    .major - The major version of a beacon
+        //    .minor - The minor version of a beacon
+        //    .rssi - Signal strength: RSSI value (between -100 and 0)
+        //    .proximity - Proximity value, can either be "unknown", "far", "near" or "immediate"
+        //    .accuracy - The accuracy of a beacon
+      }
+    );    
 
   }
 
