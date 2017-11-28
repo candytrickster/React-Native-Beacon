@@ -18,6 +18,8 @@ import Header from '../components/Header';
 import BackBeacon from '../components/BackBeacon';
 import Hint from '../components/Hint';
 import FunFact from '../components/FunFact';
+import FadeIn from '../components/FadeIn';
+
 
 const maxItems = 10;
 
@@ -102,7 +104,9 @@ class GridScreen extends React.Component {
       <Image source={require('../assets/images/bg.png')} style={styles.container}>
         <Header type='end'>
           <TouchableOpacity onPress={this._finishGame}>
-            <Text style={{fontSize: 14, color: 'white', textAlign: 'center'}}>End Game</Text>
+            
+              <Text style={{fontSize: 14, color: 'white', textAlign: 'center'}}>{!this.state.finished ? 'End Game' : 'Game Over'}</Text>
+            
           </TouchableOpacity>
         </Header>
         <ScrollView>
@@ -110,49 +114,51 @@ class GridScreen extends React.Component {
             <EndScreen numFound={this.state.numFound} max={maxItems}/>
           ): (
             <View>
-              <Text style={styles.title}>Found {this.state.numFound} of {maxItems}</Text>
-              <Grid>
-                <Col style={{ width: width(50), justifyContent: 'center', alignItems: 'center' }}>
-                  <Row>
-                    {(this.state.isolator.found) ? (
-                      <Beacon name={this.state.isolator.name} found={this.state.isolator.found} image='isolator'/>
-                    ) : (
-                      <TouchableOpacity onPress={this._flip.bind(this,'isolator','this is the isolator clue. Also a bit long','this is the isolator hint. Im just making this really really long to see what this will look like. oh long hint, how many pepople will read you? Not many. You are purely for looks..')}>
+              <FadeIn delay={500} duration={1800} style={{justifyContent: 'center', alignItems: 'center', zIndex: 9999}}>
+                <Text style={styles.title}>Found {this.state.numFound} of {maxItems}</Text>
+                <Grid>
+                  <Col style={{ width: width(50), justifyContent: 'center', alignItems: 'center' }}>
+                    <Row>
+                      {(this.state.isolator.found) ? (
                         <Beacon name={this.state.isolator.name} found={this.state.isolator.found} image='isolator'/>
-                      </TouchableOpacity>
-                    )}
-                  </Row>
-                  <Row>
-                    {(this.state.bell.found) ? (
-                      <Beacon name={this.state.bell.name} found={this.state.bell.found} image='bell'/>
-                    ) : (
-                      <TouchableOpacity onPress={this._flip.bind(this,'bell','this is the bell clue','this is the bell hint')}>
+                      ) : (
+                        <TouchableOpacity onPress={this._flip.bind(this,'isolator','this is the isolator clue. Also a bit long','this is the isolator hint. Im just making this really really long to see what this will look like. oh long hint, how many pepople will read you? Not many. You are purely for looks..')}>
+                          <Beacon name={this.state.isolator.name} found={this.state.isolator.found} image='isolator'/>
+                        </TouchableOpacity>
+                      )}
+                    </Row>
+                    <Row>
+                      {(this.state.bell.found) ? (
                         <Beacon name={this.state.bell.name} found={this.state.bell.found} image='bell'/>
-                      </TouchableOpacity>
-                    )}
-                  </Row>
-                </Col>
-                <Col style={{ width: width(50), justifyContent: 'center', alignItems: 'center' }}>
-                  <Row>
-                    {(this.state.walker.found) ? (
-                      <Beacon name={this.state.walker.name} found={this.state.walker.found} image='walker'/>
-                    ) : (
-                      <TouchableOpacity onPress={this._flip.bind(this,'walker','this is the walker clue','this is the walker hint')}>
+                      ) : (
+                        <TouchableOpacity onPress={this._flip.bind(this,'bell','this is the bell clue','this is the bell hint')}>
+                          <Beacon name={this.state.bell.name} found={this.state.bell.found} image='bell'/>
+                        </TouchableOpacity>
+                      )}
+                    </Row>
+                  </Col>
+                  <Col style={{ width: width(50), justifyContent: 'center', alignItems: 'center' }}>
+                    <Row>
+                      {(this.state.walker.found) ? (
                         <Beacon name={this.state.walker.name} found={this.state.walker.found} image='walker'/>
-                      </TouchableOpacity>
-                    )}
-                  </Row>
-                  <Row>
-                    {(this.state.supremeCourt.found) ? (
-                      <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} image='supremeCourt'/>
-                    ) : (
-                      <TouchableOpacity onPress={this._flip.bind(this,'supremeCourt','this is the supremeCourt clue','this is the supremeCourt hint')}>
+                      ) : (
+                        <TouchableOpacity onPress={this._flip.bind(this,'walker','this is the walker clue','this is the walker hint')}>
+                          <Beacon name={this.state.walker.name} found={this.state.walker.found} image='walker'/>
+                        </TouchableOpacity>
+                      )}
+                    </Row>
+                    <Row>
+                      {(this.state.supremeCourt.found) ? (
                         <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} image='supremeCourt'/>
-                      </TouchableOpacity>
-                    )}
-                  </Row>
-                </Col>
-              </Grid>
+                      ) : (
+                        <TouchableOpacity onPress={this._flip.bind(this,'supremeCourt','this is the supremeCourt clue','this is the supremeCourt hint')}>
+                          <Beacon name={this.state.supremeCourt.name} found={this.state.supremeCourt.found} image='supremeCourt'/>
+                        </TouchableOpacity>
+                      )}
+                    </Row>
+                  </Col>
+                </Grid>
+              </FadeIn>
             </View>
           )}
 
@@ -283,7 +289,7 @@ class GridScreen extends React.Component {
 
     if(this.state.numFound >= maxItems){
       this.setState({
-        finished: !this.state.finished
+        finished: true
       });
     }
 
