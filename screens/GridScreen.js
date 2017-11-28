@@ -104,9 +104,7 @@ class GridScreen extends React.Component {
       <Image source={require('../assets/images/bg.png')} style={styles.container}>
         <Header type='end'>
           <TouchableOpacity onPress={this._finishGame}>
-            
               <Text style={{fontSize: 14, color: 'white', textAlign: 'center'}}>{!this.state.finished ? 'End Game' : 'Game Over'}</Text>
-            
           </TouchableOpacity>
         </Header>
         <ScrollView>

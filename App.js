@@ -6,7 +6,6 @@ import Hr from 'react-native-hr';
 import { width, height, totalSize } from 'react-native-dimension';
 //screens
 import GridScreen from './screens/GridScreen';
-import EndScreen from './screens/EndScreen';
 //components
 import Grass from './components/Grass';
 import Capitol from './components/Capitol';
@@ -139,8 +138,7 @@ const styles = StyleSheet.create({
 
 export default SimpleApp = StackNavigator({
   Home: { screen: HomeScreen },
-  Grid: { screen: GridScreen },
-  End: { screen: EndScreen }
+  Grid: { screen: GridScreen }
 },{ 
   headerMode: 'none' 
 });

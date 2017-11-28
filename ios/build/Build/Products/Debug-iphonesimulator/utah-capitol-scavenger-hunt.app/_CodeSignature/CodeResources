@@ -42,7 +42,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		43hgP0ib660EGwYoMpmTvVEnGfk=
+		DHsl0NWbyGJKecvdB89MMxu7GKE=
 		</data>
 		<key>ComodoCaLimitedRsaCertificationAuthority.der</key>
 		<data>
@@ -466,7 +466,7 @@
 		</dict>
 		<key>GTMOAuth2ViewTouch.nib</key>
 		<data>
-		H0meHceYhModXssBr4ejw3/0/os=
+		gJfuqTV+UR+6mf5vAhJflhhXGcE=
 		</data>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
 		<data>
@@ -1505,19 +1505,31 @@
 		</dict>
 		<key>Info.plist</key>
 		<data>
-		BnYoipv6F8Dqo8IcZZbGCM87ODo=
+		VBuZ5usF4W3oIqo7FL69jmgrd2Q=
 		</data>
-		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
+		<key>LaunchImage-700-568h@2x.png</key>
 		<data>
-		L8r2qFp1XfXbxHkBhQtD1/NgcgA=
+		276NaoRqJj+Uy5Kmz1SOtMHodKw=
 		</data>
-		<key>LaunchScreen.storyboardc/Info.plist</key>
+		<key>LaunchImage-800-667h@2x.png</key>
 		<data>
-		n2t8gsDpfE6XkhG31p7IQJRxTxU=
+		A/U1MvxXXFBdcxP3WMJVvnwmHPo=
 		</data>
-		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
+		<key>LaunchImage-800-Landscape-736h@3x.png</key>
 		<data>
-		2j5UvgbJCMEMz8SKC+JbnBCd1vQ=
+		t/gaByt1l+9xI8KyzmPy2yUGBVs=
+		</data>
+		<key>LaunchImage-800-Portrait-736h@3x.png</key>
+		<data>
+		5TgAc0inM3ICf/LGDgPFp5dCD1Q=
+		</data>
+		<key>LaunchImage.png</key>
+		<data>
+		Ue7Az8SL31Xsm/MIH8o6o7rE3Y0=
+		</data>
+		<key>LaunchImage@2x.png</key>
+		<data>
+		6FKjltwBhHd9cXuKVBgmdG+rCJw=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -1665,11 +1677,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			43hgP0ib660EGwYoMpmTvVEnGfk=
+			DHsl0NWbyGJKecvdB89MMxu7GKE=
 			</data>
 			<key>hash2</key>
 			<data>
-			p4CyjGx347+grXVJoSfBUvft4JioYtUIuzcfB12zqtY=
+			6RLTTCdqz+EtwcztQF57JJRrn15mNA9WDxLRuoxiKWk=
 			</data>
 		</dict>
 		<key>ComodoCaLimitedRsaCertificationAuthority.der</key>
@@ -2314,11 +2326,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			H0meHceYhModXssBr4ejw3/0/os=
+			gJfuqTV+UR+6mf5vAhJflhhXGcE=
 			</data>
 			<key>hash2</key>
 			<data>
-			bos7q8mWjg6XGdlRTwteF0Cl6oOf+ngFNp5IQPxT7ZY=
+			rsh8mXetVjv9NgDfwGn43djzR0Z/PZUC9vXiQv2QNgc=
 			</data>
 		</dict>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
@@ -4239,37 +4251,70 @@
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
+		<key>LaunchImage-700-568h@2x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			L8r2qFp1XfXbxHkBhQtD1/NgcgA=
+			276NaoRqJj+Uy5Kmz1SOtMHodKw=
 			</data>
 			<key>hash2</key>
 			<data>
-			ygi03iUw89K6azKUGgIM6Ru1SFVf+GBV9gsJyT+8QBM=
+			rZr422751h5SjZjpa3lTB/iWFi+8f2HdgtJdOxa0B8w=
 			</data>
 		</dict>
-		<key>LaunchScreen.storyboardc/Info.plist</key>
+		<key>LaunchImage-800-667h@2x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			n2t8gsDpfE6XkhG31p7IQJRxTxU=
+			A/U1MvxXXFBdcxP3WMJVvnwmHPo=
 			</data>
 			<key>hash2</key>
 			<data>
-			HyVdXMU7Ux4/KalAao30mpWOK/lEPT4gvYN09wf31cg=
+			PXRkmkguMfJUINVN3XKPVwDAizB8y8GvRHP4sBiwqeM=
 			</data>
 		</dict>
-		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
+		<key>LaunchImage-800-Landscape-736h@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2j5UvgbJCMEMz8SKC+JbnBCd1vQ=
+			t/gaByt1l+9xI8KyzmPy2yUGBVs=
 			</data>
 			<key>hash2</key>
 			<data>
-			TU0iDLoWdGpcC7xy1bu/vRVZsJdYfmxcvmEBgIFk3Yw=
+			tXZFKSiJEo1hjqzOQBwjUlkfMRQqEovILa8H++97dg4=
+			</data>
+		</dict>
+		<key>LaunchImage-800-Portrait-736h@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			5TgAc0inM3ICf/LGDgPFp5dCD1Q=
+			</data>
+			<key>hash2</key>
+			<data>
+			6tTzKGk+93iha6TcvuMB/PoK8J2Sri+mg2WHnKJ/Yf0=
+			</data>
+		</dict>
+		<key>LaunchImage.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Ue7Az8SL31Xsm/MIH8o6o7rE3Y0=
+			</data>
+			<key>hash2</key>
+			<data>
+			sgfxlk2wFGsmZO+FvWt1XAe2NoJnukh/04WHRRNhiII=
+			</data>
+		</dict>
+		<key>LaunchImage@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6FKjltwBhHd9cXuKVBgmdG+rCJw=
+			</data>
+			<key>hash2</key>
+			<data>
+			Zzq9m3ig7Z/oPSp4G1/pW+VPrjx5RyaPDShowj7vRLM=
 			</data>
 		</dict>
 		<key>api.amplitude.com.der</key>
