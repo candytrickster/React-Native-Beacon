@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#002a5c',
-    height: 80,
+    height: height(13),
     width: width(100)
   },
   containerBackButton:{
