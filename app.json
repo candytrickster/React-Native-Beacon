@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Utah Capitol Scavenger Hunt",
-    "description": "",
+    "description": "Can you find all the items in our Utah Capitol Scavenger Hunt?",
     "slug": "utah-capitol-scavenger-hunt",
     "sdkVersion": "21.0.0",
     "ios": {

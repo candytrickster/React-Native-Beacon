@@ -213,7 +213,7 @@ class GridScreen extends React.Component {
               clue: clue,
               hint: hint,
               address: '0C:F3:EE:0D:A4:4C',
-              uuid: 'isolator new uuid'
+              uuid: '2f234454-cf6d-4a0f-adf2-f4911ba9ffa6'
             })
           })
         );
@@ -227,7 +227,7 @@ class GridScreen extends React.Component {
               clue: clue,
               hint: hint,
               address: '0C:F3:EE:0D:A4:4C',
-              uuid: 'bell new uuid'
+              uuid: '2f234454-cf6d-4a0f-adf2-f4911ba9ffa6'
             })
           })
         );
@@ -241,7 +241,7 @@ class GridScreen extends React.Component {
               clue: clue,
               hint: hint,
               address: '0C:F3:EE:0D:A4:4C',
-              uuid: 'new uuid'
+              uuid: '2f234454-cf6d-4a0f-adf2-f4911ba9ffa6'
             })
           })
         );
@@ -255,7 +255,7 @@ class GridScreen extends React.Component {
               clue: clue,
               hint: hint,
               address: '0C:F3:EE:0D:A4:4C',
-              uuid: 'new uuid'
+              uuid: '2f234454-cf6d-4a0f-adf2-f4911ba9ffa6'
             })
           })
         );
@@ -362,6 +362,16 @@ class GridScreen extends React.Component {
         );
         break;
     }
+
+    Beacons
+   .stopRangingBeaconsInRegion(region)
+   .then(() => console.log('Beacons ranging stopped succesfully'))
+   .catch(error => console.log(`Beacons ranging not stopped, error: ${error}`));
+   // remove auth state event we registered at componentDidMount:
+   this.authStateDidRangeEvent.remove();
+   // remove ranging event we registered at componentDidMount:
+   this.beaconsDidRangeEvent.remove();
+
   }
 
   _finishGame = () => {
@@ -378,28 +388,32 @@ class GridScreen extends React.Component {
     //     this._found(this.state.currentItem.name);
     // },1000);
 
+    Beacons.requestWhenInUseAuthorization();
+
+
     const region = {
-      identifier: 'Estimotes',
+      identifier: 'sdot',
       uuid: uuid
     };
+ 
+    Beacons
+    .startRangingBeaconsInRegion(region) // or like  < v1.0.7: .startRangingBeaconsInRegion(identifier, uuid)
+    .then(() => console.log('Beacons ranging started succesfully'))
+    .catch(error => console.log(`Beacons ranging not started, error: ${error}`));
 
-    const subscription = DeviceEventEmitter.addListener(
-      'beaconsDidRange',
-      (data) => {
-        // data.region - The current region
-        // data.region.identifier
-        // data.region.uuid
+    this.beaconsDidRangeEvent = Beacons.BeaconsEventEmitter.addListener(
+     'beaconsDidRange',
+     (data) => {
+       console.log('beaconsDidRange data: ', data);
+        // if(data.proximity == 'near'){ changes yo
+          this._found(this.state.currentItem.name);
+        // }
+     }
+   );
+
+
      
-        // data.beacons - Array of all beacons inside a region
-        //  in the following structure:
-        //    .uuid
-        //    .major - The major version of a beacon
-        //    .minor - The minor version of a beacon
-        //    .rssi - Signal strength: RSSI value (between -100 and 0)
-        //    .proximity - Proximity value, can either be "unknown", "far", "near" or "immediate"
-        //    .accuracy - The accuracy of a beacon
-      }
-    );    
+    Beacons.startUpdatingLocation();
 
   }
 
