@@ -42,7 +42,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		YlM9Cb7Z5RK4QKK+dBonp8zovIA=
+		0ZbJo61DnyB/BxWF/9V1nTADsQQ=
 		</data>
 		<key>ComodoCaLimitedRsaCertificationAuthority.der</key>
 		<data>
@@ -466,7 +466,7 @@
 		</dict>
 		<key>GTMOAuth2ViewTouch.nib</key>
 		<data>
-		eUobFkki4fFGQFg7gc4cxfoi8fI=
+		JLJ12G1gC+JEYVDfCckYg3vVZg8=
 		</data>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
 		<data>
@@ -1505,31 +1505,35 @@
 		</dict>
 		<key>Info.plist</key>
 		<data>
-		6sZH6Noy7Y4BZTvCpcK4dRGo6h4=
+		ZG8dQf5vJigplk325UoUSGR7i0Y=
 		</data>
 		<key>LaunchImage-568h@2x.png</key>
 		<data>
-		5+bz2xqXoyqN9ZjfViVExLJoPGU=
+		a6Zjb3F54b1Ewncpm/lRNNmkU2Q=
 		</data>
 		<key>LaunchImage-700-568h@2x.png</key>
 		<data>
 		276NaoRqJj+Uy5Kmz1SOtMHodKw=
 		</data>
+		<key>LaunchImage-700@2x.png</key>
+		<data>
+		nrVluCxt62aNxLmghriErnRRqBE=
+		</data>
 		<key>LaunchImage-800-667h@2x.png</key>
 		<data>
-		mBEkACsku16h3COr7B+I+CnWF/U=
+		Qi5MGUVo/cpwk6Z6eW4oDmO4el0=
 		</data>
 		<key>LaunchImage-800-Landscape-736h@3x.png</key>
 		<data>
-		aJgtNp4QVKtWPMlyCG0yZiWdbSk=
+		CJ++3LVjQtUG0V/DRrdn4i7N85o=
 		</data>
 		<key>LaunchImage-800-Portrait-736h@3x.png</key>
 		<data>
-		2XBnr2Qr+jYLMy2jzd9a8oTHylQ=
+		8PevhCmgD45Gqnu6tEhnI5K7Fyg=
 		</data>
 		<key>LaunchImage.png</key>
 		<data>
-		5L3JdZO/nc6NqJl1BJ5fWBHAhGs=
+		XowBx6CxeW3hYD2qmwEG6yUGZnY=
 		</data>
 		<key>LaunchImage@2x.png</key>
 		<data>
@@ -1681,11 +1685,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YlM9Cb7Z5RK4QKK+dBonp8zovIA=
+			0ZbJo61DnyB/BxWF/9V1nTADsQQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			b11LyTZSUFfwyXO05pAD7jV/L/hL5HZZDvewPpgoBFc=
+			FBB63N4IUOp7BOHa0YgQ5CnV9B1qpNsIC3m9zYzU9PM=
 			</data>
 		</dict>
 		<key>ComodoCaLimitedRsaCertificationAuthority.der</key>
@@ -2330,11 +2334,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eUobFkki4fFGQFg7gc4cxfoi8fI=
+			JLJ12G1gC+JEYVDfCckYg3vVZg8=
 			</data>
 			<key>hash2</key>
 			<data>
-			FGWFarWNQa+efrmifd/od42gDFqE8tEcwbO8VQ01XCM=
+			6rROP3fysUbNoaCcg3Ytvj8Y9xdd3j4M6cc9UjV4O7Q=
 			</data>
 		</dict>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
@@ -4259,11 +4263,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5+bz2xqXoyqN9ZjfViVExLJoPGU=
+			a6Zjb3F54b1Ewncpm/lRNNmkU2Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			4mzXFj5naz0rvFShmB0Jk5UrlIgdDarWnCVj9JUXmLs=
+			bYT7Jhex6J8xmzUqopR0dtjRt471aMjUxSpcnU64D2Y=
 			</data>
 		</dict>
 		<key>LaunchImage-700-568h@2x.png</key>
@@ -4277,48 +4281,59 @@
 			rZr422751h5SjZjpa3lTB/iWFi+8f2HdgtJdOxa0B8w=
 			</data>
 		</dict>
+		<key>LaunchImage-700@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			nrVluCxt62aNxLmghriErnRRqBE=
+			</data>
+			<key>hash2</key>
+			<data>
+			30v3vCqHZ4LjWMZ1gJC/qjCJy4WVi/Hwazk6sZWpmdc=
+			</data>
+		</dict>
 		<key>LaunchImage-800-667h@2x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mBEkACsku16h3COr7B+I+CnWF/U=
+			Qi5MGUVo/cpwk6Z6eW4oDmO4el0=
 			</data>
 			<key>hash2</key>
 			<data>
-			VXbV22f4GLJFtO+kz7Q71yc3nhOS/oxFk0X2CbOvtpU=
+			QSx4Sfl4Gp+9vIOBGYFBdmkRtrz/Iv8FU7c5fc1SPEg=
 			</data>
 		</dict>
 		<key>LaunchImage-800-Landscape-736h@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			aJgtNp4QVKtWPMlyCG0yZiWdbSk=
+			CJ++3LVjQtUG0V/DRrdn4i7N85o=
 			</data>
 			<key>hash2</key>
 			<data>
-			5OHyq6SNSwt2MMT6gdDvpX/dsv+S1pbjO63OaRHv1nM=
+			+Od5n0wwpOr1xDuZVBWx5XJQkdE8JBi9ZXsJsa0+iPU=
 			</data>
 		</dict>
 		<key>LaunchImage-800-Portrait-736h@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2XBnr2Qr+jYLMy2jzd9a8oTHylQ=
+			8PevhCmgD45Gqnu6tEhnI5K7Fyg=
 			</data>
 			<key>hash2</key>
 			<data>
-			TW8Kdc0EJ5rPJhGA2btM0GVnHyEVBtOx/G1cZoaHjls=
+			f/OzKYiYtJZ2bmqOB7Hqc/eDUeIeXl3Oi1XYWUwTvrA=
 			</data>
 		</dict>
 		<key>LaunchImage.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5L3JdZO/nc6NqJl1BJ5fWBHAhGs=
+			XowBx6CxeW3hYD2qmwEG6yUGZnY=
 			</data>
 			<key>hash2</key>
 			<data>
-			899Aj5QoofdVHAc8LfGBmLmi34A8H5P6CHEWyQ2yh5U=
+			4VmbP0ZrdQ//euPV+dmgTMRbtDSvNbcN/RQvHoH/9SE=
 			</data>
 		</dict>
 		<key>LaunchImage@2x.png</key>
