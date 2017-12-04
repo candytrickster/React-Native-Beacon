@@ -68,6 +68,8 @@ class GridScreen extends React.Component {
       avenir: require("../assets/fonts/Avenir.otf")
     });
 
+    Beacons.requestWhenInUseAuthorization();
+
     this.setState({ isReady: true });
   }
 
@@ -388,7 +390,7 @@ class GridScreen extends React.Component {
     //     this._found(this.state.currentItem.name);
     // },1000);
 
-    Beacons.requestWhenInUseAuthorization();
+    // Beacons.requestWhenInUseAuthorization();
 
 
     const region = {

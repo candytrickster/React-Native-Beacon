@@ -42,7 +42,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		DHsl0NWbyGJKecvdB89MMxu7GKE=
+		YlM9Cb7Z5RK4QKK+dBonp8zovIA=
 		</data>
 		<key>ComodoCaLimitedRsaCertificationAuthority.der</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>EXBuildConstants.plist</key>
 		<data>
-		YsNuwHNYHA471znLUhUBTAvjh0U=
+		jvZ0O6ihWnIsPYT4AVegeAZ880s=
 		</data>
 		<key>EXSDKVersions.plist</key>
 		<data>
@@ -466,7 +466,7 @@
 		</dict>
 		<key>GTMOAuth2ViewTouch.nib</key>
 		<data>
-		gJfuqTV+UR+6mf5vAhJflhhXGcE=
+		eUobFkki4fFGQFg7gc4cxfoi8fI=
 		</data>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
 		<data>
@@ -1505,7 +1505,11 @@
 		</dict>
 		<key>Info.plist</key>
 		<data>
-		VBuZ5usF4W3oIqo7FL69jmgrd2Q=
+		6sZH6Noy7Y4BZTvCpcK4dRGo6h4=
+		</data>
+		<key>LaunchImage-568h@2x.png</key>
+		<data>
+		5+bz2xqXoyqN9ZjfViVExLJoPGU=
 		</data>
 		<key>LaunchImage-700-568h@2x.png</key>
 		<data>
@@ -1513,23 +1517,23 @@
 		</data>
 		<key>LaunchImage-800-667h@2x.png</key>
 		<data>
-		A/U1MvxXXFBdcxP3WMJVvnwmHPo=
+		mBEkACsku16h3COr7B+I+CnWF/U=
 		</data>
 		<key>LaunchImage-800-Landscape-736h@3x.png</key>
 		<data>
-		t/gaByt1l+9xI8KyzmPy2yUGBVs=
+		aJgtNp4QVKtWPMlyCG0yZiWdbSk=
 		</data>
 		<key>LaunchImage-800-Portrait-736h@3x.png</key>
 		<data>
-		5TgAc0inM3ICf/LGDgPFp5dCD1Q=
+		2XBnr2Qr+jYLMy2jzd9a8oTHylQ=
 		</data>
 		<key>LaunchImage.png</key>
 		<data>
-		Ue7Az8SL31Xsm/MIH8o6o7rE3Y0=
+		5L3JdZO/nc6NqJl1BJ5fWBHAhGs=
 		</data>
 		<key>LaunchImage@2x.png</key>
 		<data>
-		6FKjltwBhHd9cXuKVBgmdG+rCJw=
+		PbpVYW3nxugOkayB2YC8T6ymJd0=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -1677,11 +1681,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DHsl0NWbyGJKecvdB89MMxu7GKE=
+			YlM9Cb7Z5RK4QKK+dBonp8zovIA=
 			</data>
 			<key>hash2</key>
 			<data>
-			6RLTTCdqz+EtwcztQF57JJRrn15mNA9WDxLRuoxiKWk=
+			b11LyTZSUFfwyXO05pAD7jV/L/hL5HZZDvewPpgoBFc=
 			</data>
 		</dict>
 		<key>ComodoCaLimitedRsaCertificationAuthority.der</key>
@@ -1721,11 +1725,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YsNuwHNYHA471znLUhUBTAvjh0U=
+			jvZ0O6ihWnIsPYT4AVegeAZ880s=
 			</data>
 			<key>hash2</key>
 			<data>
-			LjJ3D8zSFGE1xUek3MeYmj4nRHKqaqzgxkPoWFsCF3k=
+			a/iY9Oossu7IIw6Hs3IpRkAH9g2BQJ3vBrWugVStOp8=
 			</data>
 		</dict>
 		<key>EXSDKVersions.plist</key>
@@ -2326,11 +2330,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gJfuqTV+UR+6mf5vAhJflhhXGcE=
+			eUobFkki4fFGQFg7gc4cxfoi8fI=
 			</data>
 			<key>hash2</key>
 			<data>
-			rsh8mXetVjv9NgDfwGn43djzR0Z/PZUC9vXiQv2QNgc=
+			FGWFarWNQa+efrmifd/od42gDFqE8tEcwbO8VQ01XCM=
 			</data>
 		</dict>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
@@ -4251,6 +4255,17 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>LaunchImage-568h@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			5+bz2xqXoyqN9ZjfViVExLJoPGU=
+			</data>
+			<key>hash2</key>
+			<data>
+			4mzXFj5naz0rvFShmB0Jk5UrlIgdDarWnCVj9JUXmLs=
+			</data>
+		</dict>
 		<key>LaunchImage-700-568h@2x.png</key>
 		<dict>
 			<key>hash</key>
@@ -4266,55 +4281,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			A/U1MvxXXFBdcxP3WMJVvnwmHPo=
+			mBEkACsku16h3COr7B+I+CnWF/U=
 			</data>
 			<key>hash2</key>
 			<data>
-			PXRkmkguMfJUINVN3XKPVwDAizB8y8GvRHP4sBiwqeM=
+			VXbV22f4GLJFtO+kz7Q71yc3nhOS/oxFk0X2CbOvtpU=
 			</data>
 		</dict>
 		<key>LaunchImage-800-Landscape-736h@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			t/gaByt1l+9xI8KyzmPy2yUGBVs=
+			aJgtNp4QVKtWPMlyCG0yZiWdbSk=
 			</data>
 			<key>hash2</key>
 			<data>
-			tXZFKSiJEo1hjqzOQBwjUlkfMRQqEovILa8H++97dg4=
+			5OHyq6SNSwt2MMT6gdDvpX/dsv+S1pbjO63OaRHv1nM=
 			</data>
 		</dict>
 		<key>LaunchImage-800-Portrait-736h@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5TgAc0inM3ICf/LGDgPFp5dCD1Q=
+			2XBnr2Qr+jYLMy2jzd9a8oTHylQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			6tTzKGk+93iha6TcvuMB/PoK8J2Sri+mg2WHnKJ/Yf0=
+			TW8Kdc0EJ5rPJhGA2btM0GVnHyEVBtOx/G1cZoaHjls=
 			</data>
 		</dict>
 		<key>LaunchImage.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Ue7Az8SL31Xsm/MIH8o6o7rE3Y0=
+			5L3JdZO/nc6NqJl1BJ5fWBHAhGs=
 			</data>
 			<key>hash2</key>
 			<data>
-			sgfxlk2wFGsmZO+FvWt1XAe2NoJnukh/04WHRRNhiII=
+			899Aj5QoofdVHAc8LfGBmLmi34A8H5P6CHEWyQ2yh5U=
 			</data>
 		</dict>
 		<key>LaunchImage@2x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6FKjltwBhHd9cXuKVBgmdG+rCJw=
+			PbpVYW3nxugOkayB2YC8T6ymJd0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Zzq9m3ig7Z/oPSp4G1/pW+VPrjx5RyaPDShowj7vRLM=
+			pn9u7Qu6U7/2hMD513oo+mgvy1vfVZNh5HNQjZYBP3s=
 			</data>
 		</dict>
 		<key>api.amplitude.com.der</key>
