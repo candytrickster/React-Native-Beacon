@@ -407,8 +407,9 @@ class GridScreen extends React.Component {
      'beaconsDidRange',
      (data) => {
        console.log('beaconsDidRange data: ', data);
-        // if(data.proximity == 'near'){ changes yo
+        // if(data.proximity == 'near'){ 
           this._found(this.state.currentItem.name);
+          
         // }
      }
    );
