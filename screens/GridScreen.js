@@ -32,6 +32,7 @@ class GridScreen extends React.Component {
     this.handler = this._flip.bind(this,'','','');
 
     this.state = {
+      beaconNotFound: true,
       numFound: 0,
       finished: false,
       currentItem: {
@@ -68,15 +69,29 @@ class GridScreen extends React.Component {
       avenir: require("../assets/fonts/Avenir.otf")
     });
 
-    Beacons.requestWhenInUseAuthorization();
+
 
     this.setState({ isReady: true });
   }
 
   componentDidMount() {
+    console.log("ummmm what???");
+    Beacons.requestWhenInUseAuthorization();
+    console.log("HEYY YOOOOOOOOOOO");
     // this.interval = setInterval(() => {
     //     this._found('isolator');
     // },1000);
+  }
+
+  componentWillUnMount() {
+   //  Beacons
+   // .stopRangingBeaconsInRegion(region)
+   // .then(() => console.log('Beacons ranging stopped succesfully'))
+   // .catch(error => console.log(`Beacons ranging not stopped, error: ${error}`));
+   // // remove auth state event we registered at componentDidMount:
+   // this.authStateDidRangeEvent.remove();
+   // // remove ranging event we registered at componentDidMount:
+   // this.beaconsDidRangeEvent.remove();
   }
 
   static navigationOptions = {
@@ -365,14 +380,7 @@ class GridScreen extends React.Component {
         break;
     }
 
-    Beacons
-   .stopRangingBeaconsInRegion(region)
-   .then(() => console.log('Beacons ranging stopped succesfully'))
-   .catch(error => console.log(`Beacons ranging not stopped, error: ${error}`));
-   // remove auth state event we registered at componentDidMount:
-   this.authStateDidRangeEvent.remove();
-   // remove ranging event we registered at componentDidMount:
-   this.beaconsDidRangeEvent.remove();
+    
 
   }
 
@@ -408,9 +416,14 @@ class GridScreen extends React.Component {
      (data) => {
        console.log('beaconsDidRange data: ', data);
         // if(data.proximity == 'near'){ 
-          this._found(this.state.currentItem.name);
-          
+        //   this._found(this.state.currentItem.name);
         // }
+        if(this.state.beaconNotFound){
+          this.setState({
+            beaconNotFound: false
+          });
+          this._found(this.state.currentItem.name);
+        }
      }
    );
 
