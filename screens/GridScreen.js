@@ -398,8 +398,6 @@ class GridScreen extends React.Component {
     //     this._found(this.state.currentItem.name);
     // },1000);
 
-    // Beacons.requestWhenInUseAuthorization();
-
 
     const region = {
       identifier: 'sdot',
