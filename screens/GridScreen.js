@@ -380,8 +380,6 @@ class GridScreen extends React.Component {
         break;
     }
 
-    
-
   }
 
   _finishGame = () => {

@@ -36,13 +36,6 @@
 			remoteGlobalIDString = 00E356EE1AD99517003FC87E;
 			remoteInfo = ReactNativeSocialShareTests;
 		};
-		DC3006CB1FBCE41700DF972B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 01A82CF674B8459D94168681 /* RNiBeacon.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0D03EBDE1E56B1E700C55E6B;
-			remoteInfo = RNiBeacon;
-		};
 		DC348C461FBB8301005FAC95 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9125A2BD977641928CD7F5D0 /* RNDeviceInfo.xcodeproj */;
@@ -57,10 +50,16 @@
 			remoteGlobalIDString = E72EC1401F7ABB5A0001BC90;
 			remoteInfo = "RNDeviceInfo-tvOS";
 		};
+		DCBC0B0C1FE3152500EFE467 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCBC0B081FE3152500EFE467 /* RNiBeacon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D03EBDE1E56B1E700C55E6B;
+			remoteInfo = RNiBeacon;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01A82CF674B8459D94168681 /* RNiBeacon.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNiBeacon.xcodeproj; path = "../node_modules/react-native-ibeacons/ios/RNiBeacon/RNiBeacon.xcodeproj"; sourceTree = "<group>"; };
 		2C1548D9E4CB1AEFA5CCAE6D /* Pods-utah-capitol-scavenger-hunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-utah-capitol-scavenger-hunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-utah-capitol-scavenger-hunt/Pods-utah-capitol-scavenger-hunt.debug.xcconfig"; sourceTree = "<group>"; };
 		4406E509811C44839E1FD6BB /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
 		6A1893BE4DE940B693750283 /* ReactNativeSocialShare.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeSocialShare.xcodeproj; path = "../node_modules/react-native-social-share/ReactNativeSocialShare.xcodeproj"; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		B5DB047F1F3A684600E91581 /* shell-app.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "shell-app.bundle"; sourceTree = "<group>"; };
 		BCD40A6F2F104F95986C8D03 /* libRNDeviceInfo-tvOS */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = text; path = "libRNDeviceInfo-tvOS"; sourceTree = "<group>"; };
 		C4A88D15726AD99E8A257BC7 /* libPods-utah-capitol-scavenger-hunt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-utah-capitol-scavenger-hunt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCBC0B081FE3152500EFE467 /* RNiBeacon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNiBeacon.xcodeproj; path = "../node_modules/react-native-beacons-manager/ios/RNiBeacon/RNiBeacon.xcodeproj"; sourceTree = "<group>"; };
 		E37F2167904E417FA072ADB9 /* libRNiBeacon.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNiBeacon.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,9 +101,9 @@
 		0B835E8893614439A10C7A82 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				DCBC0B081FE3152500EFE467 /* RNiBeacon.xcodeproj */,
 				9125A2BD977641928CD7F5D0 /* RNDeviceInfo.xcodeproj */,
 				6A1893BE4DE940B693750283 /* ReactNativeSocialShare.xcodeproj */,
-				01A82CF674B8459D94168681 /* RNiBeacon.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -180,14 +180,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DC3006C41FBCE41700DF972B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DC3006CC1FBCE41700DF972B /* libRNiBeacon.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		DC348C411FBB8301005FAC95 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +196,14 @@
 			children = (
 				DC348C471FBB8301005FAC95 /* libRNDeviceInfo.a */,
 				DC348C491FBB8301005FAC95 /* libRNDeviceInfo-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCBC0B091FE3152500EFE467 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCBC0B0D1FE3152500EFE467 /* libRNiBeacon.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,8 +274,8 @@
 					ProjectRef = 9125A2BD977641928CD7F5D0 /* RNDeviceInfo.xcodeproj */;
 				},
 				{
-					ProductGroup = DC3006C41FBCE41700DF972B /* Products */;
-					ProjectRef = 01A82CF674B8459D94168681 /* RNiBeacon.xcodeproj */;
+					ProductGroup = DCBC0B091FE3152500EFE467 /* Products */;
+					ProjectRef = DCBC0B081FE3152500EFE467 /* RNiBeacon.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -300,13 +300,6 @@
 			remoteRef = DC30066D1FBCD7B200DF972B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DC3006CC1FBCE41700DF972B /* libRNiBeacon.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNiBeacon.a;
-			remoteRef = DC3006CB1FBCE41700DF972B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		DC348C471FBB8301005FAC95 /* libRNDeviceInfo.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -319,6 +312,13 @@
 			fileType = archive.ar;
 			path = "libRNDeviceInfo-tvOS.a";
 			remoteRef = DC348C481FBB8301005FAC95 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCBC0B0D1FE3152500EFE467 /* libRNiBeacon.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNiBeacon.a;
+			remoteRef = DCBC0B0C1FE3152500EFE467 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
