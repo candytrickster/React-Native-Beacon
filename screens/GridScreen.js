@@ -78,9 +78,6 @@ class GridScreen extends React.Component {
     console.log("ummmm what???");
     Beacons.requestWhenInUseAuthorization();
     console.log("HEYY YOOOOOOOOOOO");
-    // this.interval = setInterval(() => {
-    //     this._found('isolator');
-    // },1000);
   }
 
   componentWillUnMount() {
@@ -390,42 +387,67 @@ class GridScreen extends React.Component {
 
   _lookForBeacon = (uuid) => {
     console.log("Hello "+this.state.currentItem.name+" : "+uuid);
-    // this._found(this.state.currentItem.name);
-    // OR
-    // this.interval = setInterval(() => {
-    //     this._found(this.state.currentItem.name);
-    // },1000);
-
 
     const region = {
       identifier: 'sdot',
       uuid: uuid
     };
  
-    Beacons
-    .startRangingBeaconsInRegion(region) // or like  < v1.0.7: .startRangingBeaconsInRegion(identifier, uuid)
-    .then(() => console.log('Beacons ranging started succesfully'))
-    .catch(error => console.log(`Beacons ranging not started, error: ${error}`));
+   //  Beacons
+   //  .startRangingBeaconsInRegion(region)
+   //  .then(() => console.log('Beacons ranging started succesfully'))
+   //  .catch(error => console.log(`Beacons ranging not started, error: ${error}`));
 
-    this.beaconsDidRangeEvent = Beacons.BeaconsEventEmitter.addListener(
-     'beaconsDidRange',
-     (data) => {
-       console.log('beaconsDidRange data: ', data);
-        // if(data.proximity == 'near'){ 
-        //   this._found(this.state.currentItem.name);
-        // }
+   //  this.beaconsDidRangeEvent = Beacons.BeaconsEventEmitter.addListener(
+   //   'beaconsDidRange',
+   //   (data) => {
+   //     console.log('beaconsDidRange data: ', data);
+   //      // if(data.proximity == 'near'){ 
+   //      //   this._found(this.state.currentItem.name);
+   //      // }
+   //      if(this.state.beaconNotFound){
+   //        this.setState({
+   //          beaconNotFound: false
+   //        });
+   //        this._found(this.state.currentItem.name);
+   //      }
+   //   }
+   // );
+
+
+     
+   //  Beacons.startUpdatingLocation();
+
+
+    Beacons.startMonitoringForRegion(region);
+    Beacons.startRangingBeaconsInRegion(region);
+
+    Beacons.startUpdatingLocation();
+
+    // Listen for beacon changes
+    const subscription = DeviceEventEmitter.addListener(
+      'beaconsDidRange',
+      (data) => {
+        // data.region - The current region
+        // data.region.identifier
+        // data.region.uuid
+
+        // data.beacons - Array of all beacons inside a region
+        //  in the following structure:
+        //    .uuid
+        //    .major - The major version of a beacon
+        //    .minor - The minor version of a beacon
+        //    .rssi - Signal strength: RSSI value (between -100 and 0)
+        //    .proximity - Proximity value, can either be "unknown", "far", "near" or "immediate"
+        //    .accuracy - The accuracy of a beacon
         if(this.state.beaconNotFound){
           this.setState({
             beaconNotFound: false
           });
           this._found(this.state.currentItem.name);
         }
-     }
-   );
-
-
-     
-    Beacons.startUpdatingLocation();
+      }
+    );
 
   }
 
