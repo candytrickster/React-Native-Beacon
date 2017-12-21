@@ -290,6 +290,9 @@ class GridScreen extends React.Component {
         break;
     }
     if(this.state.isFlipped) {
+      this.setState({
+            beaconNotFound: true
+          });
       this._lookForBeacon(this.state.currentItem.uuid);
     }
   }
@@ -440,14 +443,17 @@ class GridScreen extends React.Component {
         //    .rssi - Signal strength: RSSI value (between -100 and 0)
         //    .proximity - Proximity value, can either be "unknown", "far", "near" or "immediate"
         //    .accuracy - The accuracy of a beacon
-        if(this.state.beaconNotFound){
+        if(this.state.beaconNotFound && data.beacons[0].proximity == "immediate"){
           this.setState({
             beaconNotFound: false
           });
+          console.log("proximity : "+data.beacons[0].proximity);
           this._found(this.state.currentItem.name);
         }
       }
     );
+
+    
 
   }
 
